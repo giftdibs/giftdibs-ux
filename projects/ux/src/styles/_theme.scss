@@ -116,3 +116,15 @@ strong {
 .gd-spacing-padding-even-large {
   padding: $gd-spacing-padding-even-large;
 }
+
+.gd-spacing-padding-squish {
+  padding: $gd-spacing-padding-squish;
+}
+
+.gd-spacing-padding-squish-large {
+  padding: $gd-spacing-padding-squish-compact;
+}
+
+.gd-spacing-padding-squish-compact {
+  padding: $gd-spacing-padding-squish-large;
+}

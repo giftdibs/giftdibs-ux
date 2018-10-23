@@ -26,10 +26,11 @@
           </button>
           <button *ngIf="imageSource"
             class="gd-button gd-button-default"
+            title="Remove image"
             type="button"
             (click)="clearSelection()"
           >
-            Remove
+            <gd-icon icon="trash"></gd-icon>
           </button>
           <input
             aria-label="Avatar URL"
