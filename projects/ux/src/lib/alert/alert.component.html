@@ -5,7 +5,8 @@
   [ngClass]="'gd-alert-' + alert.type"
   [attr.aria-live]="ariaLive"
   [@gdAnimationEmerge]="animationState"
-  (@gdAnimationEmerge.done)="onAnimationDone($event)">
+  (@gdAnimationEmerge.done)="onAnimationDone($event)"
+>
   <div class="gd-alert-message">
     {{ alert.text }}
   </div>
@@ -15,7 +16,8 @@
     title="Close alert"
     aria-hidden="true"
     [ngClass]="'gd-button-' + alert.type"
-    (click)="close()">
-    <i class="fa fa-times" aria-hidden="true"></i>
+    (click)="close()"
+  >
+    <gd-icon icon="times"></gd-icon>
   </button>
 </div>

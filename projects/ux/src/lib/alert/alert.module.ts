@@ -11,6 +11,10 @@ import {
 } from '@angular/platform-browser/animations';
 
 import {
+  IconModule
+} from '../icon/icon.module';
+
+import {
   OverlayModule
 } from '../overlay/overlay.module';
 
@@ -26,6 +30,7 @@ import {
   imports: [
     BrowserAnimationsModule,
     CommonModule,
+    IconModule,
     OverlayModule
   ],
   declarations: [
