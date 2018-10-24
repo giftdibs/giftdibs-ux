@@ -101,6 +101,10 @@ export class ThumbnailComponent {
       classNames.push('gd-thumbnail-' + this.size);
     }
 
+    if (this.type === 'user') {
+      classNames.push('gd-rounded-corners-circle');
+    }
+
     return classNames.join(' ');
   }
 
