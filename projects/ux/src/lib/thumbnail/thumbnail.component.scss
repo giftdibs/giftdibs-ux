@@ -47,8 +47,10 @@
 }
 
 .gd-rounded-corners-circle {
-  background-position: top center;
-  background-size: cover;
+  .gd-thumbnail-image-container {
+    background-position: top center;
+    background-size: cover;
+  }
 }
 
 .gd-thumbnail-image {
