@@ -1,3 +1,7 @@
+# 1.0.0-alpha.4 (2018-10-23)
+
+- Fixed user thumbnail to fill circle.
+
 # 1.0.0-alpha.3 (2018-10-23)
 
 - Various style adjustments.
