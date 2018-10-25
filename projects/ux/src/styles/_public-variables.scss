@@ -1,3 +1,4 @@
+// SCREEN
 $gd-screen-xs-min: 500px !default;
 $gd-screen-sm-min: 768px !default;
 $gd-screen-md-min: 992px !default;
@@ -6,6 +7,17 @@ $gd-screen-lg-min: 1200px !default;
 $gd-screen-xs-max: $gd-screen-sm-min - 1 !default;
 $gd-screen-sm-max: $gd-screen-md-min - 1 !default;
 $gd-screen-md-max: $gd-screen-lg-min - 1 !default;
+
+// TEXT
+$gd-font-family: sans-serif !default;
+$gd-font-weight-light: 100 !default;
+$gd-font-weight-normal: 400 !default;
+$gd-font-weight-bold: 700 !default;
+$gd-font-weight-black: 900 !default;
+$gd-line-height: 1.5 !default;
+$gd-line-height-reduced: 1.2 !default;
+
+// COLORS
 
 @function background_color($color) {
   @return desaturate(lighten($color, 45%), 25%);
@@ -77,3 +89,11 @@ $gd-text-color-dark: $gd-color-neutral-darkest !default;
 
 // BRANDS
 $gd-color-brand-facebook: #3b5998 !default;
+
+// SPACING
+$gd-spacing: 12px !default;
+$gd-spacing-xl: $gd-spacing * 2 !default;
+$gd-spacing-lg: 10px !default;
+$gd-spacing-md: 5px !default;
+$gd-spacing-sm: 3px !default;
+$gd-spacing-xs: 2px !default;
