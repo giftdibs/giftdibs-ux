@@ -1,3 +1,7 @@
+# 1.0.0-alpha.5 (2018-10-24)
+
+- Added text and font values to public variables.
+
 # 1.0.0-alpha.4 (2018-10-23)
 
 - Fixed user thumbnail to fill circle.
