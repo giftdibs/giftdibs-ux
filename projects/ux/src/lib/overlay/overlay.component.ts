@@ -97,12 +97,6 @@ export class OverlayComponent implements OnDestroy {
       });
 
     overlayInstance.componentInstance = componentRef.instance;
-    overlayInstance.destroyed.subscribe(() => {
-      componentRef.destroy();
-      if (backdropRef) {
-        backdropRef.destroy();
-      }
-    });
 
     this.changeDetector.markForCheck();
 

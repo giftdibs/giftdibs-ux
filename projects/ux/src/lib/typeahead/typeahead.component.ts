@@ -70,7 +70,13 @@ export class TypeaheadComponent
   public placeholder: string;
 
   @Input()
+  public searchButtonText = 'Search';
+
+  @Input()
   public searchFunction: TypeaheadSearchFunction<any>;
+
+  @Input()
+  public searchOnKeyUp = true;
 
   @Input()
   public searchResultTemplate: TemplateRef<any>;
@@ -109,35 +115,31 @@ export class TypeaheadComponent
   public ngAfterViewInit(): void {
     const input = this.searchInput.nativeElement;
 
-    fromEvent(input, 'keyup')
-      .pipe(
-        takeUntil(this.ngUnsubscribe),
-        debounceTime(KEYUP_DEBOUNCE_TIME),
-        distinctUntilChanged()
-      )
-      .subscribe((event: any) => {
-        const key = event.key.toLowerCase();
-        switch (key) {
-          case 'tab':
-          case 'enter':
-          case 'escape':
-          case 'arrowup':
-          case 'arrowdown':
-          case 'up':
-          case 'down':
-          break;
+    if (this.searchOnKeyUp) {
+      fromEvent(input, 'keyup')
+        .pipe(
+          takeUntil(this.ngUnsubscribe),
+          debounceTime(KEYUP_DEBOUNCE_TIME),
+          distinctUntilChanged()
+        )
+        .subscribe((event: any) => {
+          const key = event.key.toLowerCase();
+          switch (key) {
+            case 'tab':
+            case 'enter':
+            case 'escape':
+            case 'arrowup':
+            case 'arrowdown':
+            case 'up':
+            case 'down':
+            break;
 
-          default:
-          const keywords = event.target.value;
-
-          if (keywords !== this.value) {
-            this.search(event.target.value);
-            this.value = event.target.value;
+            default:
+            this.search();
+            break;
           }
-
-          break;
-        }
-      });
+        });
+    }
 
     fromEvent(document, 'click')
       .pipe(
@@ -152,6 +154,10 @@ export class TypeaheadComponent
     this.removeResults();
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+  }
+
+  public onButtonClick(): void {
+    this.search();
   }
 
   public writeValue(value: string): void {
@@ -178,7 +184,14 @@ export class TypeaheadComponent
     this.changeDetector.markForCheck();
   }
 
-  private search(searchText: string): void {
+  private search(): void {
+    const searchText = this.searchInput.nativeElement.value;
+    if (searchText === this.value && this.hasResults) {
+      return;
+    }
+
+    this.value = searchText;
+
     this.searchFunction.call({}, searchText)
       .pipe(
         takeUntil(this.ngUnsubscribe)
@@ -248,7 +261,6 @@ export class TypeaheadComponent
   }
 
   private positionResults(): void {
-    console.log('positionResults()');
     this.overlayInstance.componentInstance.hideResults();
     const resultsRef = this.overlayInstance.componentInstance.elementRef;
 

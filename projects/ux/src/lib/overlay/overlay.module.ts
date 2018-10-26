@@ -7,6 +7,10 @@ import {
 } from '@angular/common';
 
 import {
+  RouterModule
+} from '@angular/router';
+
+import {
   WindowRefService
 } from '../window/window-ref.service';
 
@@ -16,7 +20,8 @@ import { OverlayService } from './overlay.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   declarations: [
     OverlayComponent

@@ -1,1 +1,1 @@
-export type TypeaheadSearchResultAction<T> = (searchResult: T) => string;
+export type TypeaheadSearchResultAction<T> = (searchResult: T) => string | void;

@@ -13,11 +13,13 @@ import {
 
 import { TypeaheadResultsComponent } from './typeahead-results.component';
 import { TypeaheadComponent } from './typeahead.component';
+import { OverlayModule } from '../overlay/overlay.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    OverlayModule,
     ReactiveFormsModule
   ],
   exports: [
