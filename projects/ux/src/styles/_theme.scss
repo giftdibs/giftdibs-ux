@@ -121,3 +121,10 @@ strong {
 .gd-spacing-padding-squish-compact {
   padding: $gd-spacing-padding-squish-compact;
 }
+
+.gd-unordered-list {
+  margin: 0 0 $gd-spacing * 2;
+  padding-left: $gd-spacing;
+  list-style: disc;
+  list-style-position: inside;
+}

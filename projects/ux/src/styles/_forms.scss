@@ -82,3 +82,22 @@ select.gd-form-control {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+.gd-input-group-inline {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: baseline;
+  width: 100%;
+
+  .gd-form-control {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+  }
+
+  .gd-button {
+    margin-left: $gd-spacing-sm;
+  }
+}

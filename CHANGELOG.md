@@ -1,3 +1,8 @@
+# 1.0.0-alpha.7 (2018-10-27)
+
+- Added `.gd-input-group-inline`.
+- Fixed some style issues.
+
 # 1.0.0-alpha.6 (2018-10-26)
 
 - Added a few demos for the modules and modified the APIs for Typeahead, Dropdown Menu, Thumbnail, and Media modules. [#1](https://github.com/giftdibs/giftdibs-ux/pull/1)

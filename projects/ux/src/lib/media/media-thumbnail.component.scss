@@ -4,6 +4,12 @@
   flex: 0 0 auto;
 }
 
+.gd-media-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .gd-media-thumbnail-xs {
   width: 38px;
   height: 38px;
