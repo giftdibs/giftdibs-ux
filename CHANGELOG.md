@@ -1,3 +1,7 @@
+# 1.0.0-alpha.8 (2018-10-27)
+
+- Fixed bundler.
+
 # 1.0.0-alpha.7 (2018-10-27)
 
 - Added `.gd-input-group-inline`.
