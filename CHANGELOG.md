@@ -1,3 +1,7 @@
+# 1.0.0-alpha.6 (2018-10-26)
+
+- Added a few demos for the modules and modified the APIs for Typeahead, Dropdown Menu, Thumbnail, and Media modules. [#1](https://github.com/giftdibs/giftdibs-ux/pull/1)
+
 # 1.0.0-alpha.5 (2018-10-24)
 
 - Added text and font values to public variables.
