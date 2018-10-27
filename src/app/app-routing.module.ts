@@ -9,6 +9,10 @@ import {
 
 const appRoutes: Routes = [
   {
+    path: 'demos/dropdown-menu',
+    loadChildren: 'src/app/demos/dropdown-menu/dropdown-menu-demo.module#DropdownMenuDemoModule'
+  },
+  {
     path: 'demos/media',
     loadChildren: 'src/app/demos/media/media-demo.module#MediaDemoModule'
   },

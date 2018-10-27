@@ -115,6 +115,7 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
   }
 
   public close(): void {
+    console.log('close?');
     this.overlayInstance.destroy();
     this.context.config.caller.nativeElement.focus();
   }
