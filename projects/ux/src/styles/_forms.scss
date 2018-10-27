@@ -34,10 +34,6 @@ select.gd-form-control {
   height: 38px;
 }
 
-.gd-form-fieldset {
-
-}
-
 .gd-input-group {
   position: relative;
   display: flex;
@@ -51,6 +47,11 @@ select.gd-form-control {
     flex: 1 1 auto;
     width: 1%;
     border-radius: 0;
+  }
+
+  .gd-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
 

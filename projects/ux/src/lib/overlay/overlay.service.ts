@@ -73,11 +73,10 @@ export class OverlayService implements OnDestroy {
 
   private removeHostComponent(): void {
     if (this.host) {
+      this.adapter.removeHostElement();
       this.appRef.detachView(this.host.hostView);
       this.host.destroy();
       this.host = undefined;
     }
-
-    this.adapter.removeHostElement();
   }
 }

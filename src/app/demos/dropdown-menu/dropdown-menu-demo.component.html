@@ -1,0 +1,22 @@
+<button
+  class="gd-button gd-button-default"
+  type="button"
+  gdDropdownMenuTrigger
+  [menuItems]="menuItems"
+>
+  Show menu
+</button>
+
+<button
+  class="gd-button gd-button-primary"
+  type="button"
+  gdDropdownMenuTrigger
+  [menuItemTemplate]="menuItemTemplate"
+  [menuItems]="menuItems"
+>
+  Show menu
+</button>
+
+<ng-template let-item="item" #menuItemTemplate>
+  {{item|json}}
+</ng-template>

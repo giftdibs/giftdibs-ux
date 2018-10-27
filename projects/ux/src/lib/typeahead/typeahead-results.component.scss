@@ -3,6 +3,8 @@
 :host {
   background-color: #fff;
   box-shadow: $gd-box-shadow-lg;
+  display: block;
+  width: 100%;
 }
 
 .gd-typeahead-results {

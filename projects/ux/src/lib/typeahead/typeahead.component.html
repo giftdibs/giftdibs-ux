@@ -1,4 +1,19 @@
 <div class="gd-typeahead">
+  <ng-container *ngIf="!searchOnKeyUp else input">
+    <div class="gd-typeahead-input-group">
+      <ng-container *ngTemplateOutlet="input"></ng-container>
+      <button
+        class="gd-button gd-button-default"
+        type="button"
+        (click)="onButtonClick();$event.stopPropagation();"
+      >
+        {{ searchButtonText }}
+      </button>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #input>
   <input
     autocomplete="off"
     class="gd-form-control"
@@ -6,6 +21,7 @@
     [attr.aria-describedby]="ariaDescribedBy"
     [attr.placeholder]="placeholder"
     (focus)="searchInput.select()"
+    (keyup.enter)="onButtonClick();$event.stopPropagation();"
     #searchInput
   />
-</div>
+</ng-template>

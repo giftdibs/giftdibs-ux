@@ -53,6 +53,7 @@ export * from './lib/icon/icon.module';
 export * from './lib/image-uploader/image-uploader.module';
 
 export * from './lib/media/media.module';
+export * from './lib/media/media-size';
 
 export * from './lib/modal/modal-closed-event-args';
 export * from './lib/modal/modal-closed-event-reason';
@@ -82,6 +83,8 @@ export * from './lib/ribbon/ribbon.module';
 
 // do not export tabs yet
 
+export * from './lib/thumbnail/thumbnail-shape';
+export * from './lib/thumbnail/thumbnail-size';
 export * from './lib/thumbnail/thumbnail.module';
 
 export * from './lib/typeahead/typeahead-results-context';

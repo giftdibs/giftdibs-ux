@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'projects/ux/src/styles/giftdibs.scss';
+@import 'projects/ux/src/styles/public-variables';
+@import 'projects/ux/src/styles/public-mixins';
+
+h2 {
+  margin: 20px 0;
+}

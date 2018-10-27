@@ -17,15 +17,15 @@ import {
 } from '@angular/animations';
 
 import {
-  gdAnimationEmerge
-} from '../animation/emerge';
-
-import {
   Observable
 } from 'rxjs';
 
-import { ModalSize } from './modal-size';
+import {
+  gdAnimationEmerge
+} from '../animation/emerge';
+
 import { ModalConfig } from './modal-config';
+import { ModalSize } from './modal-size';
 
 @Component({
   selector: 'gd-modal-wrapper',

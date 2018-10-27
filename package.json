@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build:library": "ng build ux && node ./scripts/bundle-css.js",
+    "build": "ng build ux && node ./scripts/bundle-css.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
