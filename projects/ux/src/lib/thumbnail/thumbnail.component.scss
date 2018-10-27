@@ -1,5 +1,7 @@
 @import '../../styles/mixins';
 
+$gd-thumbnail-default-size: 160px;
+
 :host {
   flex-grow: 1;
 }
@@ -12,17 +14,6 @@
   border-radius: $gd-border-radius-sm;
   overflow: hidden;
   font-size: $gd-font-size-default;
-}
-
-.gd-thumbnail-anchor {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  color: $gd-color-neutral-lighter;
-}
-
-.gd-thumbnail-empty {
-  background-color: $gd-color-neutral-lightest !important;
 }
 
 .gd-thumbnail-image-container {
@@ -46,11 +37,11 @@
   }
 }
 
-.gd-rounded-corners-circle {
-  .gd-thumbnail-image-container {
-    background-position: top center;
-    background-size: cover;
-  }
+.gd-thumbnail-anchor {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  color: $gd-color-neutral-lighter;
 }
 
 .gd-thumbnail-image {
@@ -59,28 +50,48 @@
   height: auto;
 }
 
+.gd-thumbnail-empty {
+  .gd-thumbnail-image-container {
+    background-color: $gd-color-neutral-lightest;
+  }
+}
+
+.gd-thumbnail-circle {
+  .gd-thumbnail-image-container {
+    background-position: top center;
+    background-size: cover;
+  }
+
+  &:not(.gd-thumbnail-empty) {
+    .gd-thumbnail-image-container {
+      background-color: transparent;
+    }
+  }
+}
+
 .gd-thumbnail-xs {
-  width: 32px;
-  height: 32px;
+  width: $gd-thumbnail-default-size * 0.25;
+  height: $gd-thumbnail-default-size * 0.25;
 }
 
 .gd-thumbnail-sm {
-  width: 3rem;
-  height: 3rem;
+  width: $gd-thumbnail-default-size * 0.5;
+  height: $gd-thumbnail-default-size * 0.5;
 }
 
 .gd-thumbnail-md {
-  width: 7rem;
-  height: 7rem;
+  width: $gd-thumbnail-default-size * 0.75;
+  height: $gd-thumbnail-default-size * 0.75;
 }
 
 .gd-thumbnail-lg {
-  width: 10rem;
-  height: 10rem;
+  width: $gd-thumbnail-default-size;
+  height: $gd-thumbnail-default-size;
 }
 
 .gd-thumbnail-fill {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-grow: 1;
 }

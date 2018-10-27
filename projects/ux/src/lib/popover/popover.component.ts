@@ -11,10 +11,6 @@ import {
 } from '@angular/core';
 
 import {
-  WindowRefService
-} from '../window/window-ref.service';
-
-import {
   fromEvent,
   Observable,
   Subject
@@ -27,6 +23,10 @@ import {
 import {
   AffixService
 } from '../affix/affix.service';
+
+import {
+  WindowRefService
+} from '../window/window-ref.service';
 
 import {
   GD_FOCUSABLE_SELECTORS

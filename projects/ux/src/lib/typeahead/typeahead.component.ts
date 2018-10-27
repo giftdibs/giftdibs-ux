@@ -29,6 +29,13 @@ import {
   takeWhile
 } from 'rxjs/operators';
 
+import { AffixVerticalAlignment } from '../affix/affix-vertical-alignment';
+import { AffixService } from '../affix/affix.service';
+
+import { OverlayConfig } from '../overlay/overlay-config';
+import { OverlayInstance } from '../overlay/overlay-instance';
+import { OverlayService } from '../overlay/overlay.service';
+
 import { TypeaheadDomAdapterService } from './typeahead-dom-adapter.service';
 import { TypeaheadResultsContext } from './typeahead-results-context';
 import { TypeaheadResultsSelectionChange } from './typeahead-results-selection-change';
@@ -36,11 +43,6 @@ import { TypeaheadResultsComponent } from './typeahead-results.component';
 import { TypeaheadSearchFunction } from './typeahead-search-function';
 import { TypeaheadSearchResultAction } from './typeahead-search-result-action';
 
-import { AffixService } from '../affix/affix.service';
-import { OverlayService } from '../overlay/overlay.service';
-import { OverlayInstance } from '../overlay/overlay-instance';
-import { OverlayConfig } from '../overlay/overlay-config';
-import { AffixVerticalAlignment } from '../affix/affix-vertical-alignment';
 
 const KEYUP_DEBOUNCE_TIME = 400;
 

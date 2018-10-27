@@ -1,7 +1,7 @@
 <div
   aria-hidden="true"
   class="gd-thumbnail"
-  [attr.title]="title"
+  [attr.title]="altText"
   [ngClass]="classNames"
 >
   <ng-container *ngIf="!route">
@@ -11,10 +11,10 @@
     <a
       class="gd-thumbnail-anchor"
       tabindex="0"
-      [routerLink]="route.commands"
       [fragment]="route.extras?.fragment"
       [queryParams]="route.extras?.queryParams"
       [queryParamsHandling]="route.extras?.queryParamsHandling"
+      [routerLink]="route.commands"
     ><ng-container *ngTemplateOutlet="image"></ng-container></a>
   </ng-container>
 </div>
@@ -23,9 +23,6 @@
   <div
     class="gd-thumbnail-image-container"
     role="img"
-    [ngClass]="{
-      'gd-thumbnail-empty': !imageSource
-    }"
     [ngStyle]="{
       'background-image': (imageSource && size !== 'static') ? 'url(' + imageSource + ')' : ''
     }"
@@ -37,6 +34,7 @@
     ></gd-icon>
     <img *ngIf="size === 'static' && imageSource"
       class="gd-thumbnail-image"
+      [attr.alt]="altText"
       [attr.src]="imageSource"
     />
     <ng-content></ng-content>

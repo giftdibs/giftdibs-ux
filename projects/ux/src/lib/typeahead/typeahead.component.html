@@ -21,6 +21,7 @@
     [attr.aria-describedby]="ariaDescribedBy"
     [attr.placeholder]="placeholder"
     (focus)="searchInput.select()"
+    (keyup.enter)="onButtonClick();$event.stopPropagation();"
     #searchInput
   />
 </ng-template>

@@ -19,14 +19,17 @@ import {
   takeUntil
 } from 'rxjs/operators';
 
-import { DropdownMenuContext } from './dropdown-menu-context';
-import { DropdownMenuItem } from './dropdown-menu-item';
-import { AffixService } from '../affix/affix.service';
-import { OverlayInstance } from '../overlay/overlay-instance';
-import { WindowRefService } from '../window/window-ref.service';
+import { AffixConfig } from '../affix/affix-config';
 import { AffixHorizontalAlignment } from '../affix/affix-horizontal-alignment';
 import { AffixVerticalAlignment } from '../affix/affix-vertical-alignment';
-import { AffixConfig } from '../affix/affix-config';
+import { AffixService } from '../affix/affix.service';
+
+import { OverlayInstance } from '../overlay/overlay-instance';
+
+import { WindowRefService } from '../window/window-ref.service';
+
+import { DropdownMenuContext } from './dropdown-menu-context';
+import { DropdownMenuItem } from './dropdown-menu-item';
 
 @Component({
   selector: 'gd-dropdown-menu',

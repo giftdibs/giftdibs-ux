@@ -16,6 +16,9 @@ import {
   IconStyle
 } from '../icon/icon-style';
 
+import { ThumbnailShape } from './thumbnail-shape';
+import { ThumbnailSize } from './thumbnail-size';
+
 @Component({
   selector: 'gd-thumbnail',
   templateUrl: './thumbnail.component.html',
@@ -33,7 +36,7 @@ export class ThumbnailComponent {
       return this._icon;
     }
 
-    return (this.type === 'user') ? 'user' : 'image';
+    return (this.shape === ThumbnailShape.Circle) ? 'user' : 'image';
   }
 
   @Input()
@@ -80,13 +83,13 @@ export class ThumbnailComponent {
   };
 
   @Input()
-  public size: 'xs' | 'sm' | 'md' | 'lg' | 'fill' | 'static' = 'md';
+  public size = ThumbnailSize.Static;
 
   @Input()
-  public title: string;
+  public altText: string;
 
   @Input()
-  public type: 'default' | 'user' = 'default';
+  public shape = ThumbnailShape.Default;
 
   public get classNames(): string {
     const classNames = [];
@@ -95,13 +98,10 @@ export class ThumbnailComponent {
       classNames.push('gd-thumbnail-empty');
     }
 
-    if (this.size === 'static' && !this.imageSource) {
-      classNames.push('gd-thumbnail-fill');
-    } else {
-      classNames.push('gd-thumbnail-' + this.size);
-    }
+    classNames.push(`gd-thumbnail-${this.shape}`);
+    classNames.push(`gd-thumbnail-${this.size}`);
 
-    if (this.type === 'user') {
+    if (this.shape === ThumbnailShape.Circle) {
       classNames.push('gd-rounded-corners-circle');
     }
 

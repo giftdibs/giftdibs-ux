@@ -4,6 +4,10 @@ import {
   Input
 } from '@angular/core';
 
+import {
+  MediaSize
+} from './media-size';
+
 @Component({
   selector: 'gd-media',
   templateUrl: './media.component.html',
@@ -12,5 +16,5 @@ import {
 })
 export class MediaComponent {
   @Input()
-  public size: 'xs' | 'md' = 'md';
+  public size: MediaSize = MediaSize.Medium;
 }

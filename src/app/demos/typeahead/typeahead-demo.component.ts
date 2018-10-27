@@ -1,7 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { TypeaheadSearchResultAction, TypeaheadSearchFunction } from 'projects/ux/src/public_api';
-import { of } from 'rxjs';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+
+import {
+  of
+} from 'rxjs';
+
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators
+} from '@angular/forms';
+
+import {
+  TypeaheadSearchFunction,
+  TypeaheadSearchResultAction
+} from 'projects/ux/src/public_api';
 
 @Component({
   selector: 'app-typeahead-demo',
@@ -11,12 +27,22 @@ export class TypeaheadDemoComponent implements OnInit {
   public errors: any[];
   public reactiveForm: FormGroup;
 
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
+
   public findProductFunction: TypeaheadSearchFunction<any> = (searchText: string) => {
     return of([
       {
         imageUrl: '',
         name: 'Foobar',
         price: '5',
+        url: ''
+      },
+      {
+        imageUrl: 'assets/gd-icon.png',
+        name: 'Bar and baz',
+        price: '99',
         url: ''
       }
     ]);
@@ -25,10 +51,6 @@ export class TypeaheadDemoComponent implements OnInit {
   public searchResultAction: TypeaheadSearchResultAction<any> = (result: any) => {
     console.log('result?', result);
   }
-
-  constructor(
-    private formBuilder: FormBuilder
-  ) {}
 
   public ngOnInit(): void {
     this.createForm();

@@ -29,10 +29,10 @@
 </form>
 
 <ng-template let-result="result" #searchResultTemplate>
-  <gd-media>
+  <gd-media size="sm">
     <gd-media-thumbnail>
       <gd-thumbnail
-        size="md"
+        size="fill"
         [imageSource]="result.imageUrl"
       >
       </gd-thumbnail>
@@ -43,9 +43,11 @@
           {{ result.name }}
         </gd-media-heading>
       </gd-media-header>
-      <div class="gd-text-price">
-        ${{ result.price }}
-      </div>
+      <gd-media-body>
+        <div class="gd-text-price">
+          ${{ result.price }}
+        </div>
+      </gd-media-body>
     </gd-media-content>
     <gd-media-controls>
       <a
