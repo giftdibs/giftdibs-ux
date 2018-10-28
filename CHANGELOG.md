@@ -1,3 +1,7 @@
+# 1.0.0-alpha.9 (2018-10-27)
+
+- Fixed affix service to correctly set target's height.
+
 # 1.0.0-alpha.8 (2018-10-27)
 
 - Fixed bundler.

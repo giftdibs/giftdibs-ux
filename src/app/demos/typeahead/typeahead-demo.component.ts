@@ -32,20 +32,16 @@ export class TypeaheadDemoComponent implements OnInit {
   ) { }
 
   public findProductFunction: TypeaheadSearchFunction<any> = (searchText: string) => {
-    return of([
-      {
+    const results = [];
+    for (let i = 0; i < 15; i++) {
+      results.push({
         imageUrl: '',
-        name: 'Foobar',
-        price: '5',
+        name: `Item ${i} name`,
+        price: i,
         url: ''
-      },
-      {
-        imageUrl: 'assets/gd-icon.png',
-        name: 'Bar and baz',
-        price: '99',
-        url: ''
-      }
-    ]);
+      });
+    }
+    return of(results);
   }
 
   public searchResultAction: TypeaheadSearchResultAction<any> = (result: any) => {

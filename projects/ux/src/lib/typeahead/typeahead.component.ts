@@ -43,7 +43,6 @@ import { TypeaheadResultsComponent } from './typeahead-results.component';
 import { TypeaheadSearchFunction } from './typeahead-search-function';
 import { TypeaheadSearchResultAction } from './typeahead-search-result-action';
 
-
 const KEYUP_DEBOUNCE_TIME = 400;
 
 @Component({
@@ -164,7 +163,10 @@ export class TypeaheadComponent
 
   public writeValue(value: string): void {
     if (value) {
-      this.searchInput.nativeElement.value = value;
+      if (this.searchInput) {
+        this.searchInput.nativeElement.value = value;
+      }
+
       this._value = value;
     }
   }
