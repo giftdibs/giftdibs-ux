@@ -4,19 +4,28 @@
   [attr.title]="altText"
   [ngClass]="classNames"
 >
-  <ng-container *ngIf="!route">
+  <ng-container *ngIf="(!route && !externalLink) else hasHref">
     <ng-container *ngTemplateOutlet="image"></ng-container>
   </ng-container>
-  <ng-container *ngIf="route">
-    <a
-      class="gd-thumbnail-anchor"
-      tabindex="0"
-      [fragment]="route.extras?.fragment"
-      [queryParams]="route.extras?.queryParams"
-      [queryParamsHandling]="route.extras?.queryParamsHandling"
-      [routerLink]="route.commands"
-    ><ng-container *ngTemplateOutlet="image"></ng-container></a>
-  </ng-container>
+  <ng-template #hasHref>
+    <ng-container *ngIf="route else hasExternalLink">
+      <a
+        class="gd-thumbnail-anchor"
+        tabindex="0"
+        [fragment]="route.extras?.fragment"
+        [queryParams]="route.extras?.queryParams"
+        [queryParamsHandling]="route.extras?.queryParamsHandling"
+        [routerLink]="route.commands"
+      ><ng-container *ngTemplateOutlet="image"></ng-container></a>
+    </ng-container>
+    <ng-template #hasExternalLink>
+      <a
+        class="gd-thumbnail-anchor"
+        tabindex="0"
+        [attr.href]="externalLink"
+      ><ng-container *ngTemplateOutlet="image"></ng-container></a>
+    </ng-template>
+  </ng-template>
 </div>
 
 <ng-template #image>

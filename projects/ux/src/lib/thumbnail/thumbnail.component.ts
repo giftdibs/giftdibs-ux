@@ -83,6 +83,9 @@ export class ThumbnailComponent {
   };
 
   @Input()
+  public externalLink: string;
+
+  @Input()
   public size = ThumbnailSize.Static;
 
   @Input()
