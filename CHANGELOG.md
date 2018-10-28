@@ -1,3 +1,7 @@
+# 1.0.0-alpha.10 (2018-10-27)
+
+- Minor adjustments to badge and media padding.
+
 # 1.0.0-alpha.9 (2018-10-27)
 
 - Fixed affix service to correctly set target's height.
