@@ -1,21 +1,31 @@
 @import './mixins';
 
 .gd-button-group {
+  margin-right: -$gd-spacing-sm;
+
+  .gd-button {
+    margin-right: $gd-spacing-sm;
+  }
+}
+
+.gd-button-group-block {
+  margin-bottom: -$gd-spacing-sm;
+
   .gd-button-block,
   .gd-button-group {
     margin-bottom: $gd-spacing-sm;
-  }
-
-  .gd-button + .gd-button:not(.gd-button-block) {
-    margin-left: $gd-spacing-sm;
   }
 }
 
 .gd-button-group-fluid {
   display: flex;
+  margin-left: -$gd-spacing-xs;
+  margin-right: -$gd-spacing-xs;
 
   .gd-button {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    margin: 0 $gd-spacing-xs;
   }
 }
 
