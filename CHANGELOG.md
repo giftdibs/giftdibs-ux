@@ -1,3 +1,8 @@
+# 1.0.0-alpha.12 (2018-10-29)
+
+- Added theme demo.
+- Added dark overlay to dropdown menu.
+
 # 1.0.0-alpha.11 (2018-10-28)
 
 - Added `externalLink` input to thumbnail component.
