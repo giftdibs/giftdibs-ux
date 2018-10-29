@@ -6,6 +6,7 @@
   box-shadow: $gd-box-shadow;
   background-color: #fff;
   padding: $gd-spacing-sm 0;
+  border-radius: $gd-border-radius-sm;
 
   &:focus {
     outline: none;

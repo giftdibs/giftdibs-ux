@@ -41,7 +41,8 @@ export class DropdownMenuService {
         providers: [{
           provide: DropdownMenuContext,
           useValue: context
-        }]
+        }],
+        showBackdrop: true
       }
     );
 
