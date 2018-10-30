@@ -1,3 +1,7 @@
+# 1.0.0-alpha.13 (2018-10-30)
+
+- Updated styles for dropdown, popover, and grids.
+
 # 1.0.0-alpha.12 (2018-10-29)
 
 - Added theme demo.
