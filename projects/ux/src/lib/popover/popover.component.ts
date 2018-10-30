@@ -52,8 +52,8 @@ export class PopoverComponent implements OnDestroy {
 
   public isVisible = false;
 
-  @ViewChild('popover')
-  private popover: ElementRef;
+  @ViewChild('popover', { read: ElementRef })
+  private popoverRef: ElementRef;
 
   @ViewChild('target', { read: ViewContainerRef })
   private targetRef: ViewContainerRef;
@@ -65,7 +65,6 @@ export class PopoverComponent implements OnDestroy {
   private _closed = new EventEmitter<void>();
 
   constructor(
-    public elementRef: ElementRef,
     private affixService: AffixService,
     private changeDetector: ChangeDetectorRef,
     private windowRef: WindowRefService
@@ -92,13 +91,13 @@ export class PopoverComponent implements OnDestroy {
   }
 
   public focusHostElement(): void {
-    this.popover.nativeElement.focus();
+    this.popoverRef.nativeElement.focus();
   }
 
   private positionPopover(): void {
     this.windowRef.nativeWindow.setTimeout(() => {
       this.affixService.affixTo(
-        this.elementRef,
+        this.popoverRef,
         this.config.trigger,
         this.config.affix
       );
@@ -110,7 +109,7 @@ export class PopoverComponent implements OnDestroy {
 
   private assignFocusableElements(): void {
     const elements: HTMLElement[] = [].slice.call(
-      this.elementRef.nativeElement.querySelectorAll(GD_FOCUSABLE_SELECTORS)
+      this.popoverRef.nativeElement.querySelectorAll(GD_FOCUSABLE_SELECTORS)
     );
 
     const focusableElements = elements
@@ -135,7 +134,7 @@ export class PopoverComponent implements OnDestroy {
 
   private addEventListeners(): void {
     const nativeWindow = this.windowRef.nativeWindow;
-    const popoverElement = this.elementRef.nativeElement;
+    const popoverElement = this.popoverRef.nativeElement;
 
     let isLastButtonFocused = false;
 

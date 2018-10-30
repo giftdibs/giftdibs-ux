@@ -1,3 +1,7 @@
+# 1.0.0-alpha.14 (2018-10-30)
+
+- Fixed screen SCSS variables.
+
 # 1.0.0-alpha.13 (2018-10-30)
 
 - Updated styles for dropdown, popover, and grids.
