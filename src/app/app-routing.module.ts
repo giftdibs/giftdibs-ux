@@ -17,6 +17,10 @@ const appRoutes: Routes = [
     loadChildren: 'src/app/demos/dropdown-menu/dropdown-menu-demo.module#DropdownMenuDemoModule'
   },
   {
+    path: 'demos/grid',
+    loadChildren: 'src/app/demos/grid/grid-demo.module#GridDemoModule'
+  },
+  {
     path: 'demos/media',
     loadChildren: 'src/app/demos/media/media-demo.module#MediaDemoModule'
   },

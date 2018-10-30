@@ -107,7 +107,11 @@ strong {
 }
 
 .gd-spacing-padding-even-large {
-  padding: $gd-spacing-padding-even-large;
+  padding: $gd-spacing-padding-even;
+
+  @media (min-width: $gd-screen-sm-min) {
+    padding: $gd-spacing-padding-even-large;
+  }
 }
 
 .gd-spacing-padding-squish {

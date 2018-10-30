@@ -12,6 +12,7 @@
         role="button"
         class="gd-button gd-dropdown-menu-item-button"
         tabindex="0"
+        [attr.title]="item.label"
         (click)="handleItemAction(item);"
         (keydown.enter)="handleItemAction(item);$event.preventDefault();"
       >
@@ -23,6 +24,7 @@
       <ng-template #routerTemplate>
         <a
           class="gd-button gd-dropdown-menu-item-button"
+          [attr.title]="item.label"
           [routerLink]="item.route"
         >
           <ng-container

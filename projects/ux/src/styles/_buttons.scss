@@ -95,11 +95,15 @@
 .gd-button-link {
   background-color: transparent;
   box-shadow: none;
-  padding: 0;
 
   &:not(.gd-button-disabled):not(:disabled):hover {
     text-decoration: underline;
     color: $gd-text-color-dark;
+  }
+
+  &:disabled,
+  &.gd-button-disabled {
+    box-shadow: none !important;
   }
 }
 

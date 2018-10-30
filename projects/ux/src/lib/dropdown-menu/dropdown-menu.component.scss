@@ -1,7 +1,19 @@
 @import '../../styles/mixins';
 
+@media (max-width: $gd-screen-xs-max) {
+  :host {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .gd-dropdown-menu {
-  min-width: 200px;
   display: inline-block;
   box-shadow: $gd-box-shadow;
   background-color: #fff;
@@ -10,6 +22,17 @@
 
   &:focus {
     outline: none;
+  }
+
+  @media (max-width: $gd-screen-xs-max) {
+    width: 80% !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  @media (min-width: $gd-screen-sm-min) {
+    min-width: 200px;
+    max-width: 100%;
   }
 }
 
@@ -25,6 +48,8 @@
   background-color: transparent;
   border-radius: 0;
   box-shadow: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   &:hover {
     background-color: $gd-color-neutral-lightest;

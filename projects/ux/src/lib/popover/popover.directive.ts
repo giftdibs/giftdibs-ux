@@ -70,7 +70,10 @@ export class PopoverDirective {
     }
 
     this.overlayInstance = this.overlayService.attach(
-      PopoverComponent
+      PopoverComponent,
+      {
+        showBackdrop: true
+      }
     );
 
     this.overlayInstance.componentInstance.attach(this.gdPopover, {

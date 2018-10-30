@@ -29,6 +29,10 @@ export class AffixService {
       subject.nativeElement,
       'height'
     );
+    this.renderer.removeStyle(
+      subject.nativeElement,
+      'width'
+    );
 
     const settings = Object.assign({}, defaults, config);
     const subjectRect = subject.nativeElement.getBoundingClientRect();
@@ -58,18 +62,38 @@ export class AffixService {
       break;
     }
 
+    if (top < 0) {
+      top = 0;
+    }
+
+    if (left < 0) {
+      left = 0;
+    }
+
     this.renderer.setStyle(subject.nativeElement, 'top', `${top}px`);
     this.renderer.setStyle(subject.nativeElement, 'left', `${left}px`);
     this.renderer.setStyle(subject.nativeElement, 'position', 'fixed');
 
     // If subject's bottom is below viewport, set its height to accommodate.
-    // https://stackoverflow.com/questions/1248081/get-the-browser-viewport-dimensions-with-javascript
+    // See: https://stackoverflow.com/a/8876069/6178885
     const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     if (subjectRect.height + top >= viewportHeight) {
       this.renderer.setStyle(
         subject.nativeElement,
         'height',
         `${viewportHeight - top}px`
+      );
+    }
+
+    // If subject's right is beyond the body's boundaries,
+    // set its width to accommodate.
+    // See: https://stackoverflow.com/a/8340177/6178885
+    const viewportWidth = document.body.clientWidth;
+    if (subjectRect.width + left >= viewportWidth) {
+      this.renderer.setStyle(
+        subject.nativeElement,
+        'width',
+        `${viewportWidth - left}px`
       );
     }
   }

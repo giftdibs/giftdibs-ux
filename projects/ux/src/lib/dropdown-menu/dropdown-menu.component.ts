@@ -129,6 +129,8 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
       verticalAlignment: AffixVerticalAlignment.Bottom
     };
 
+    this.changeDetector.detectChanges();
+
     this.affixService.affixTo(
       this.menuElementRef,
       this.context.config.caller,
