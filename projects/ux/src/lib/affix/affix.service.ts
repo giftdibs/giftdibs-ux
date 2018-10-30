@@ -42,7 +42,7 @@ export class AffixService {
     switch (settings.verticalAlignment) {
       default:
       case 'top':
-      top = targetRect.top;
+      top = targetRect.top - subjectRect.height;
       break;
 
       case 'bottom':

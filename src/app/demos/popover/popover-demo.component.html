@@ -1,0 +1,20 @@
+<h1>
+  Popovers
+</h1>
+
+<div class="gd-container gd-container-sm">
+  <button
+    class="gd-button gd-button-primary"
+    type="button"
+    [gdPopover]="content"
+    gdPopoverHorizontalAlignment="left"
+    gdPopoverVerticalAlignment="top"
+  >
+    Open popover
+  </button>
+</div>
+
+<ng-template #content>
+  Popover content.
+</ng-template>
+

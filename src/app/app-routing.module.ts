@@ -25,6 +25,10 @@ const appRoutes: Routes = [
     loadChildren: 'src/app/demos/media/media-demo.module#MediaDemoModule'
   },
   {
+    path: 'demos/popover',
+    loadChildren: 'src/app/demos/popover/popover-demo.module#PopoverDemoModule'
+  },
+  {
     path: 'demos/thumbnail',
     loadChildren: 'src/app/demos/thumbnail/thumbnail-demo.module#ThumbnailDemoModule'
   },

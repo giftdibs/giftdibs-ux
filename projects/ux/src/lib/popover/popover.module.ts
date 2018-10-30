@@ -7,6 +7,10 @@ import {
 } from '@angular/common';
 
 import {
+  OverlayModule
+} from '../overlay/overlay.module';
+
+import {
   PopoverDirective
 } from './popover.directive';
 
@@ -16,7 +20,8 @@ import {
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    OverlayModule
   ],
   declarations: [
     PopoverComponent,
