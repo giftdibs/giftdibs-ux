@@ -1,3 +1,8 @@
+# 1.0.0-alpha.15 (2018-10-30)
+
+- Added 'No results found' message to typeahead component.
+- Added mobile styles for media component.
+
 # 1.0.0-alpha.14 (2018-10-30)
 
 - Fixed screen SCSS variables.

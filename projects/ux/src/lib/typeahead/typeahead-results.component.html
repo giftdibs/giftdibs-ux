@@ -5,6 +5,11 @@
   }"
 >
   <ul class="gd-typeahead-results-list">
+    <li *ngIf="!results || !results.length"
+      class="gd-typeahead-result"
+    >
+      {{ searchResultsEmptyMessage }}
+    </li>
     <li *ngFor="let result of results; let i = index;"
       class="gd-typeahead-result"
       [ngClass]="{ 'gd-typahead-result-active': i === activeIndex }"

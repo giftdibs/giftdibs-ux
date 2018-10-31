@@ -80,6 +80,9 @@ export class TypeaheadComponent
   public searchOnKeyUp = true;
 
   @Input()
+  public searchResultsEmptyMessage = 'No results found.';
+
+  @Input()
   public searchResultTemplate: TemplateRef<any>;
 
   @Input()
@@ -202,8 +205,15 @@ export class TypeaheadComponent
       )
       .subscribe((results: any[]) => {
         if (!results || results.length === 0) {
-          this.removeResults();
-          return;
+          // No need to refresh the results if unchanged.
+          if (
+            this.overlayInstance &&
+            this.overlayInstance.componentInstance.results.length === 0
+          ) {
+            if (this.hasResults) {
+              return;
+            }
+          }
         }
 
         if (this.hasResults) {
@@ -221,6 +231,7 @@ export class TypeaheadComponent
     resultsContext.results = results;
     resultsContext.templateRef = this.searchResultTemplate;
     resultsContext.resultSelectedAction = this.searchResultAction;
+    resultsContext.searchResultsEmptyMessage = this.searchResultsEmptyMessage;
 
     const overlayConfig: OverlayConfig = {
       providers: [{
@@ -251,6 +262,7 @@ export class TypeaheadComponent
     });
 
     this.positionResults();
+    this.changeDetector.detectChanges();
     this.addEventListeners();
     this.changeDetector.markForCheck();
   }

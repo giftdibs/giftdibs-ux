@@ -22,6 +22,8 @@ import { TypeaheadResultsSelectionChange } from './typeahead-results-selection-c
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TypeaheadResultsComponent implements OnInit, OnDestroy {
+  public searchResultsEmptyMessage: string;
+
   public get activeIndex(): number {
     return this._activeIndex;
   }
@@ -48,7 +50,7 @@ export class TypeaheadResultsComponent implements OnInit, OnDestroy {
   }
 
   public set results(value: any[]) {
-    this._results = value;
+    this._results = value || [];
     this.activeIndex = 0;
     this.changeDetector.markForCheck();
   }
@@ -69,6 +71,7 @@ export class TypeaheadResultsComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.results = this.context.results;
     this.templateRef = this.context.templateRef;
+    this.searchResultsEmptyMessage = this.context.searchResultsEmptyMessage;
   }
 
   public ngOnDestroy(): void {

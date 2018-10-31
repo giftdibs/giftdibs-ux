@@ -1,8 +1,6 @@
 @import './mixins';
 
 .gd-button-group {
-  margin-right: -$gd-spacing-sm;
-
   .gd-button {
     margin-right: $gd-spacing-sm;
   }

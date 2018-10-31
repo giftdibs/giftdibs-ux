@@ -33,13 +33,15 @@ export class TypeaheadDemoComponent implements OnInit {
 
   public findProductFunction: TypeaheadSearchFunction<any> = (searchText: string) => {
     const results = [];
-    for (let i = 0; i < 15; i++) {
-      results.push({
-        imageUrl: '',
-        name: `Item ${i} name`,
-        price: i,
-        url: ''
-      });
+    if (searchText === 'steve') {
+      for (let i = 0; i < 15; i++) {
+        results.push({
+          imageUrl: '',
+          name: `Item ${i} name`,
+          price: i,
+          url: ''
+        });
+      }
     }
     return of(results);
   }

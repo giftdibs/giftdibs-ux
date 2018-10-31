@@ -8,6 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: $gd-spacing-sm;
+  width: 80px;
+  width: 80px;
 }
 
 .gd-media-thumbnail-xs {
@@ -17,19 +20,21 @@
 }
 
 .gd-media-thumbnail-sm {
-  width: 80px;
-  height: 80px;
-  margin-right: $gd-spacing-sm;
+  // This is the default.
 }
 
 .gd-media-thumbnail-md {
-  width: 110px;
-  height: 110px;
-  margin-right: $gd-spacing-md;
+  @media (min-width: $gd-screen-sm-min) {
+    margin-right: $gd-spacing-md;
+    width: 110px;
+    height: 110px;
+  }
 }
 
 .gd-media-thumbnail-lg {
-  width: 150px;
-  height: 150px;
-  margin-right: $gd-spacing-lg;
+  @media (min-width: $gd-screen-sm-min) {
+    width: 150px;
+    height: 150px;
+    margin-right: $gd-spacing-lg;
+  }
 }
