@@ -5,5 +5,6 @@ import {
 export interface OverlayConfig {
   keepAfterNavigationChange?: boolean;
   providers?: StaticProvider[];
+  preventBodyScroll?: boolean;
   showBackdrop?: boolean;
 }

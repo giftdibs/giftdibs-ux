@@ -36,6 +36,10 @@ export class AppComponent {
     {
       path: '/demos/popover',
       label: 'Popover'
+    },
+    {
+      path: '/demos/alert',
+      label: 'Alert'
     }
   ].sort(function (a: any, b: any): any {
     const keyA = a.label;

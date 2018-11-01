@@ -119,14 +119,14 @@ export class TypeaheadComponent
   public ngAfterViewInit(): void {
     const input = this.searchInput.nativeElement;
 
-    if (this.searchOnKeyUp) {
-      fromEvent(input, 'keyup')
-        .pipe(
-          takeUntil(this.ngUnsubscribe),
-          debounceTime(KEYUP_DEBOUNCE_TIME),
-          distinctUntilChanged()
-        )
-        .subscribe((event: any) => {
+    fromEvent(input, 'keyup')
+      .pipe(
+        takeUntil(this.ngUnsubscribe),
+        debounceTime(KEYUP_DEBOUNCE_TIME),
+        distinctUntilChanged()
+      )
+      .subscribe((event: any) => {
+        if (this.searchOnKeyUp) {
           const key = event.key.toLowerCase();
           switch (key) {
             case 'tab':
@@ -142,8 +142,11 @@ export class TypeaheadComponent
             this.search();
             break;
           }
-        });
-    }
+        } else {
+          // Update the value on keyup.
+          this.value = input.value;
+        }
+      });
 
     fromEvent(document, 'click')
       .pipe(
@@ -261,6 +264,10 @@ export class TypeaheadComponent
       this.changeDetector.markForCheck();
     });
 
+    this.overlayInstance.backdropClick.subscribe(() => {
+      this.overlayInstance.destroy();
+    });
+
     this.positionResults();
     this.changeDetector.detectChanges();
     this.addEventListeners();
@@ -278,7 +285,7 @@ export class TypeaheadComponent
 
   private positionResults(): void {
     this.overlayInstance.componentInstance.hideResults();
-    const resultsRef = this.overlayInstance.componentInstance.elementRef;
+    const resultsRef = this.overlayInstance.componentInstance.resultsElementRef;
 
     setTimeout(() => {
       this.affixService.affixTo(
@@ -339,7 +346,7 @@ export class TypeaheadComponent
         }
       });
 
-    fromEvent(resultsComponent.elementRef.nativeElement, 'click')
+    fromEvent(resultsComponent.resultsElementRef.nativeElement, 'click')
       .pipe(
         takeWhile(() => this.hasResults)
       )

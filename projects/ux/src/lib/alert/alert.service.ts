@@ -12,6 +12,7 @@ import {
 
 import { Alert } from './alert';
 import { AlertContext } from './alert-context';
+import { AlertType } from './alert-type';
 import { AlertComponent } from './alert.component';
 
 @Injectable()
@@ -23,15 +24,27 @@ export class AlertService {
   ) { }
 
   public error(message: string, keepAfterNavigationChange = false): void {
-    this.sendMessage({ text: message, type: 'danger', keepAfterNavigationChange });
+    this.sendMessage({
+      text: message,
+      type: AlertType.Danger,
+      keepAfterNavigationChange
+    });
   }
 
   public info(message: string, keepAfterNavigationChange = false): void {
-    this.sendMessage({ text: message, type: 'info', keepAfterNavigationChange });
+    this.sendMessage({
+      text: message,
+      type: AlertType.Info,
+      keepAfterNavigationChange
+    });
   }
 
   public success(message: string, keepAfterNavigationChange = false): void {
-    this.sendMessage({ text: message, type: 'success', keepAfterNavigationChange });
+    this.sendMessage({
+      text: message,
+      type: AlertType.Success,
+      keepAfterNavigationChange
+    });
   }
 
   private sendMessage(alert: Alert): void {

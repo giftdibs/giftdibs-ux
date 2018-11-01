@@ -3,6 +3,7 @@
   [ngClass]="{
     'gd-typeahead-results-hidden': !isVisible
   }"
+  #resultsElementRef
 >
   <ul class="gd-typeahead-results-list">
     <li *ngIf="!results || !results.length"

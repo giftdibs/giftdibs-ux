@@ -52,6 +52,14 @@ export class TypeaheadDemoComponent implements OnInit {
 
   public ngOnInit(): void {
     this.createForm();
+
+    this.reactiveForm.get('name').valueChanges.subscribe((value: string) => {
+      console.log('name:', value);
+    });
+
+    this.reactiveForm.get('name2').valueChanges.subscribe((value: string) => {
+      console.log('name2:', value);
+    });
   }
 
   public submit(): void {}
@@ -59,6 +67,9 @@ export class TypeaheadDemoComponent implements OnInit {
   private createForm(): void {
     this.reactiveForm = this.formBuilder.group({
       name: new FormControl(null, [
+        Validators.required
+      ]),
+      name2: new FormControl(null, [
         Validators.required
       ])
     });

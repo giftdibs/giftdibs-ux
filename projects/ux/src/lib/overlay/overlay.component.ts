@@ -4,6 +4,7 @@ import {
   Component,
   ComponentFactoryResolver,
   EmbeddedViewRef,
+  EventEmitter,
   Injector,
   OnDestroy,
   TemplateRef,
@@ -35,12 +36,15 @@ import { OverlayInstance } from './overlay-instance';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OverlayComponent implements OnDestroy {
+  public allowClickThrough = true;
+
   @ViewChild('backdrop')
   private backdropRef: TemplateRef<any>;
 
   @ViewChild('target', { read: ViewContainerRef })
   private targetRef: ViewContainerRef;
 
+  private click = new EventEmitter<any>();
   private ngUnsubscribe = new Subject<void>();
 
   constructor(
@@ -50,13 +54,7 @@ export class OverlayComponent implements OnDestroy {
     private router: Router
   ) { }
 
-  public attach<T>(component: Type<T>, config?: OverlayConfig): OverlayInstance<T> {
-    const defaults: OverlayConfig = {
-      keepAfterNavigationChange: false,
-      showBackdrop: false
-    };
-    const settings = Object.assign(defaults, config);
-
+  public attach<T>(component: Type<T>, config: OverlayConfig): OverlayInstance<T> {
     // TODO: Remove instance from providers since it causes scope to bleed?
     // Reason: The entry component that gets inserted into the overlay
     // should work outside of an overlay and be unaware that it is an "overlay".
@@ -66,10 +64,10 @@ export class OverlayComponent implements OnDestroy {
       useValue: overlayInstance
     }];
 
-    settings.providers = defaultProviders.concat(config && config.providers || []);
+    config.providers = defaultProviders.concat(config && config.providers || []);
 
     const injector = Injector.create({
-      providers: settings.providers,
+      providers: config.providers,
       parent: this.injector
     });
 
@@ -77,9 +75,10 @@ export class OverlayComponent implements OnDestroy {
     const componentRef = this.targetRef.createComponent(factory, undefined, injector);
 
     let backdropRef: EmbeddedViewRef<any>;
-    if (settings.showBackdrop) {
+    if (config.showBackdrop) {
       const index = this.targetRef.indexOf(componentRef.hostView);
       backdropRef = this.targetRef.createEmbeddedView(this.backdropRef, undefined, index);
+      this.allowClickThrough = false;
     }
 
     this.router.events
@@ -88,8 +87,8 @@ export class OverlayComponent implements OnDestroy {
       )
       .subscribe(event => {
         if (event instanceof NavigationStart) {
-          if (settings.keepAfterNavigationChange) {
-            settings.keepAfterNavigationChange = false;
+          if (config.keepAfterNavigationChange) {
+            config.keepAfterNavigationChange = false;
           } else {
             overlayInstance.destroy();
           }
@@ -104,6 +103,10 @@ export class OverlayComponent implements OnDestroy {
       }
     });
 
+    this.click.subscribe(() => {
+      overlayInstance.triggerBackdropClick();
+    });
+
     this.changeDetector.markForCheck();
 
     return overlayInstance;
@@ -112,5 +115,9 @@ export class OverlayComponent implements OnDestroy {
   public ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+  }
+
+  public onOverlayClick(): void {
+    this.click.emit();
   }
 }

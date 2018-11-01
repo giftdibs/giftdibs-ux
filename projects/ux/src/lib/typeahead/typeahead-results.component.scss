@@ -1,6 +1,6 @@
 @import '../../styles/mixins';
 
-:host {
+.gd-typeahead-results {
   background-color: #fff;
   box-shadow: $gd-box-shadow-lg;
   display: block;
@@ -8,7 +8,7 @@
   border-radius: $gd-border-radius-sm;
 }
 
-.gd-typeahead-results {
+.gd-typeahead-results-list {
   overflow: auto;
   height: 100%;
 }

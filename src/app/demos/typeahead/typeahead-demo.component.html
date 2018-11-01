@@ -26,6 +26,16 @@
     >
     </gd-typeahead>
   </gd-form-field>
+
+  <gd-form-field [errors]="errors">
+    <gd-typeahead
+      formControlName="name2"
+      [searchFunction]="findProductFunction"
+      [searchResultTemplate]="searchResultTemplate"
+      [searchResultAction]="searchResultAction"
+    >
+    </gd-typeahead>
+  </gd-form-field>
 </form>
 
 <ng-template let-result="result" #searchResultTemplate>
@@ -59,10 +69,3 @@
     </gd-media-controls>
   </gd-media>
 </ng-template>
-
-<gd-typeahead
-  [searchFunction]="findProductFunction"
-  [searchResultTemplate]="searchResultTemplate"
-  [searchResultAction]="searchResultAction"
->
-</gd-typeahead>

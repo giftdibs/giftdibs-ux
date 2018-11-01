@@ -7,10 +7,6 @@ import {
 } from '@angular/common';
 
 import {
-  BrowserAnimationsModule
-} from '@angular/platform-browser/animations';
-
-import {
   IconModule
 } from '../icon/icon.module';
 
@@ -28,7 +24,6 @@ import {
 
 @NgModule({
   imports: [
-    BrowserAnimationsModule,
     CommonModule,
     IconModule,
     OverlayModule

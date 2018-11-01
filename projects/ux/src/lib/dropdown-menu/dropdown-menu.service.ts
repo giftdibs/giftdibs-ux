@@ -42,6 +42,7 @@ export class DropdownMenuService {
           provide: DropdownMenuContext,
           useValue: context
         }],
+        preventBodyScroll: false,
         showBackdrop: true
       }
     );

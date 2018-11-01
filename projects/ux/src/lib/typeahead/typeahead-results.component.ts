@@ -5,7 +5,8 @@ import {
   ElementRef,
   OnDestroy,
   OnInit,
-  TemplateRef
+  TemplateRef,
+  ViewChild
 } from '@angular/core';
 
 import {
@@ -22,6 +23,9 @@ import { TypeaheadResultsSelectionChange } from './typeahead-results-selection-c
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TypeaheadResultsComponent implements OnInit, OnDestroy {
+  @ViewChild('resultsElementRef', { read: ElementRef })
+  public resultsElementRef: ElementRef<any>;
+
   public searchResultsEmptyMessage: string;
 
   public get activeIndex(): number {
@@ -63,7 +67,6 @@ export class TypeaheadResultsComponent implements OnInit, OnDestroy {
   private _results: any[];
 
   constructor(
-    public elementRef: ElementRef,
     private changeDetector: ChangeDetectorRef,
     private context: TypeaheadResultsContext
   ) { }

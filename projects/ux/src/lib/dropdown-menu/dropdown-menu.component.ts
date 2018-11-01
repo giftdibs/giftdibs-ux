@@ -87,7 +87,11 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
     private elementRef: ElementRef,
     private overlayInstance: OverlayInstance<any>,
     private windowRef: WindowRefService
-  ) { }
+  ) {
+    this.overlayInstance.backdropClick.subscribe(() => {
+      this.close();
+    });
+  }
 
   public ngOnInit(): void {
     this.items = this.context.config.items;
@@ -147,20 +151,8 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
 
     let isLastButtonFocused = false;
 
-    // Close the menu after any click event.
-    // (Timeout needed so the click is not registered on the caller button.)
-    nativeWindow.setTimeout(() => {
-      fromEvent(nativeWindow, 'click')
-        .pipe(
-          takeUntil(this.ngUnsubscribe)
-        )
-        .subscribe(() => {
-          this.close();
-        });
-    });
-
     // Close the menu with escape key.
-    fromEvent(hostElement, 'keyup')
+    fromEvent(nativeWindow, 'keyup')
       .pipe(
         takeUntil(this.ngUnsubscribe)
       )

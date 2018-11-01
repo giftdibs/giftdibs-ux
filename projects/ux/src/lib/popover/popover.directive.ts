@@ -72,6 +72,7 @@ export class PopoverDirective {
     this.overlayInstance = this.overlayService.attach(
       PopoverComponent,
       {
+        preventBodyScroll: false,
         showBackdrop: true
       }
     );
@@ -82,6 +83,10 @@ export class PopoverDirective {
         horizontalAlignment: this.gdPopoverHorizontalAlignment,
         verticalAlignment: this.gdPopoverVerticalAlignment
       }
+    });
+
+    this.overlayInstance.backdropClick.subscribe(() => {
+      this.overlayInstance.destroy();
     });
 
     this.overlayInstance.componentInstance.closed.subscribe(() => {

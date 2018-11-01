@@ -6,8 +6,12 @@ import {
   Injectable,
   Injector,
   OnDestroy,
+  Renderer2,
+  RendererFactory2,
   Type
 } from '@angular/core';
+
+import { WindowRefService } from '../window/window-ref.service';
 
 import { OverlayConfig } from './overlay-config';
 import { OverlayDomAdapterService } from './overlay-dom-adapter.service';
@@ -23,7 +27,8 @@ export class OverlayService implements OnDestroy {
     private adapter: OverlayDomAdapterService,
     private appRef: ApplicationRef,
     private injector: Injector,
-    private resolver: ComponentFactoryResolver
+    private resolver: ComponentFactoryResolver,
+    private windowRef: WindowRefService
   ) { }
 
   public ngOnDestroy(): void {
@@ -34,9 +39,21 @@ export class OverlayService implements OnDestroy {
     component: Type<T>,
     config?: OverlayConfig
   ): OverlayInstance<T> {
+    const defaults: OverlayConfig = {
+      keepAfterNavigationChange: false,
+      preventBodyScroll: true,
+      showBackdrop: false
+    };
+
+    const settings = Object.assign(defaults, config || {});
+
     this.ensureHostExists();
 
-    const instance = this.host.instance.attach(component, config);
+    if (settings.preventBodyScroll) {
+      this.adapter.restrictBodyScroll();
+    }
+
+    const instance = this.host.instance.attach(component, settings);
 
     instance.destroyed.subscribe(() => {
       this.instances.splice(this.instances.indexOf(instance), 1);
@@ -77,6 +94,7 @@ export class OverlayService implements OnDestroy {
       this.appRef.detachView(this.host.hostView);
       this.host.destroy();
       this.host = undefined;
+      this.adapter.releaseBodyScroll();
     }
   }
 }

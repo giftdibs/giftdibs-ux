@@ -9,6 +9,10 @@ import {
 
 const appRoutes: Routes = [
   {
+    path: 'demos/alert',
+    loadChildren: 'src/app/demos/alert/alert-demo.module#AlertDemoModule'
+  },
+  {
     path: 'demos/theme',
     loadChildren: 'src/app/demos/theme/theme-demo.module#ThemeDemoModule'
   },

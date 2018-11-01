@@ -5,6 +5,7 @@
 export * from './lib/affix/affix-config';
 export * from './lib/affix/affix.service';
 
+export * from './lib/alert/alert-type';
 export * from './lib/alert/alert.module';
 export * from './lib/alert/alert.service';
 export * from './lib/alert/alert';

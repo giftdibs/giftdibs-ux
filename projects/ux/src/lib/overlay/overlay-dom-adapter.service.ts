@@ -31,4 +31,19 @@ export class OverlayDomAdapterService {
     const documentObj = this.windowRef.nativeWindow.document;
     this.renderer.removeChild(documentObj.body, this.hostElement);
   }
+
+  public restrictBodyScroll(): void {
+    this.renderer.setStyle(
+      this.windowRef.nativeWindow.document.body,
+      'overflow',
+      'hidden'
+    );
+  }
+
+  public releaseBodyScroll(): void {
+    this.renderer.removeStyle(
+      this.windowRef.nativeWindow.document.body,
+      'overflow'
+    );
+  }
 }

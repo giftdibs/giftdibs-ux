@@ -139,16 +139,6 @@ export class PopoverComponent implements OnDestroy {
     let isLastButtonFocused = false;
 
     nativeWindow.setTimeout(() => {
-      // Close the menu after any click event.
-      // (Timeout needed so the click is not registered on the caller button.)
-      fromEvent(nativeWindow, 'click')
-        .pipe(
-          takeUntil(this.ngUnsubscribe)
-        )
-        .subscribe(() => {
-          this.close();
-        });
-
       // Get a list of all focusable elements in the popover.
       this.assignFocusableElements();
     });

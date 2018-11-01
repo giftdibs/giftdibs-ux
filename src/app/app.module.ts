@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 
+import {
+  BrowserAnimationsModule
+} from '@angular/platform-browser/animations';
+
 import { NgModule } from '@angular/core';
 
 import { GridModule } from 'projects/ux/src/public_api';
@@ -13,6 +17,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
     GridModule
   ],

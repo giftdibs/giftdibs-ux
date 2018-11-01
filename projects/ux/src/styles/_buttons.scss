@@ -137,5 +137,8 @@
 
 .gd-button-group-tabs {
   margin-bottom: $gd-spacing;
-  margin-left: -$gd-spacing-lg; // Offset button padding.
+
+  @media (min-width: $gd-screen-sm-min) {
+    margin-left: -$gd-spacing-lg; // Offset button padding.
+  }
 }
