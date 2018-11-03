@@ -36,6 +36,10 @@ export class ColumnComponent implements OnInit {
       'gd-column'
     ];
 
+    if (this.screenXXSmall) {
+      classNames.push(`gd-column-xxs-${this.screenXXSmall}`);
+    }
+
     if (this.screenXSmall) {
       classNames.push(`gd-column-xs-${this.screenXSmall}`);
     }

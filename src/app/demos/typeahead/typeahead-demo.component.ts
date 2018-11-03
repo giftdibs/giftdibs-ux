@@ -52,6 +52,9 @@ export class TypeaheadDemoComponent implements OnInit {
 
   public ngOnInit(): void {
     this.createForm();
+    this.reactiveForm.reset({
+      name: 'Charles'
+    });
 
     this.reactiveForm.get('name').valueChanges.subscribe((value: string) => {
       console.log('name:', value);

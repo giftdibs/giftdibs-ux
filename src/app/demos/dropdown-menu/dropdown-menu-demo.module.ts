@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
-import { DropdownMenuModule } from 'projects/ux/src/public_api';
+import { DropdownMenuModule, ModalModule } from 'projects/ux/src/public_api';
 
+import { DropdownMenuDemoModalComponent } from './dropdown-menu-demo-modal.component';
 import { DropdownMenuDemoRoutingModule } from './dropdown-menu-demo-routing.module';
 import { DropdownMenuDemoComponent } from './dropdown-menu-demo.component';
 
@@ -11,8 +12,15 @@ import { DropdownMenuDemoComponent } from './dropdown-menu-demo.component';
   imports: [
     CommonModule,
     DropdownMenuModule,
-    DropdownMenuDemoRoutingModule
+    DropdownMenuDemoRoutingModule,
+    ModalModule
   ],
-  declarations: [DropdownMenuDemoComponent]
+  declarations: [
+    DropdownMenuDemoComponent,
+    DropdownMenuDemoModalComponent
+  ],
+  entryComponents: [
+    DropdownMenuDemoModalComponent
+  ]
 })
 export class DropdownMenuDemoModule { }

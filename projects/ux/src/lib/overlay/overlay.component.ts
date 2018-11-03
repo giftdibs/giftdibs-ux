@@ -4,7 +4,6 @@ import {
   Component,
   ComponentFactoryResolver,
   EmbeddedViewRef,
-  EventEmitter,
   Injector,
   OnDestroy,
   TemplateRef,
@@ -36,15 +35,13 @@ import { OverlayInstance } from './overlay-instance';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OverlayComponent implements OnDestroy {
-  public allowClickThrough = true;
-
   @ViewChild('backdrop')
   private backdropRef: TemplateRef<any>;
 
   @ViewChild('target', { read: ViewContainerRef })
   private targetRef: ViewContainerRef;
 
-  private click = new EventEmitter<any>();
+  private instances: OverlayInstance<any>[] = [];
   private ngUnsubscribe = new Subject<void>();
 
   constructor(
@@ -78,7 +75,6 @@ export class OverlayComponent implements OnDestroy {
     if (config.showBackdrop) {
       const index = this.targetRef.indexOf(componentRef.hostView);
       backdropRef = this.targetRef.createEmbeddedView(this.backdropRef, undefined, index);
-      this.allowClickThrough = false;
     }
 
     this.router.events
@@ -101,11 +97,11 @@ export class OverlayComponent implements OnDestroy {
       if (backdropRef) {
         backdropRef.destroy();
       }
+
+      this.instances.splice(this.instances.indexOf(overlayInstance), 1);
     });
 
-    this.click.subscribe(() => {
-      overlayInstance.triggerBackdropClick();
-    });
+    this.instances.push(overlayInstance);
 
     this.changeDetector.markForCheck();
 
@@ -118,6 +114,8 @@ export class OverlayComponent implements OnDestroy {
   }
 
   public onOverlayClick(): void {
-    this.click.emit();
+    this.instances.forEach((instance) => {
+      instance.triggerBackdropClick();
+    });
   }
 }

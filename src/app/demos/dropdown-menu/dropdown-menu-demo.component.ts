@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DropdownMenuItem } from 'projects/ux/src/public_api';
+
+import { DropdownMenuItem, ModalService } from 'projects/ux/src/public_api';
+
+import { DropdownMenuDemoModalComponent } from './dropdown-menu-demo-modal.component';
 
 @Component({
   selector: 'app-dropdown-menu-demo',
@@ -9,7 +12,9 @@ import { DropdownMenuItem } from 'projects/ux/src/public_api';
 export class DropdownMenuDemoComponent implements OnInit {
   public menuItems: DropdownMenuItem[];
 
-  constructor() { }
+  constructor(
+    private modalService: ModalService
+  ) { }
 
   public ngOnInit(): void {
     this.menuItems = [
@@ -35,5 +40,9 @@ export class DropdownMenuDemoComponent implements OnInit {
         }
       }
     ];
+  }
+
+  public openModal(): void {
+    this.modalService.open(DropdownMenuDemoModalComponent, {});
   }
 }

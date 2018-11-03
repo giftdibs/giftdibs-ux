@@ -155,6 +155,9 @@ export class TypeaheadComponent
       .subscribe(() => {
         this.removeResults();
       });
+
+    // Update the value of the input.
+    input.value = this._value || '';
   }
 
   public ngOnDestroy(): void {

@@ -38,3 +38,48 @@
     margin-right: $gd-spacing-lg;
   }
 }
+
+::ng-deep {
+  .gd-media {
+    gd-media-controls + gd-media-thumbnail,
+    gd-media-content + gd-media-thumbnail {
+      .gd-media-thumbnail {
+        margin-right: 0;
+        margin-left: $gd-spacing-sm;
+      }
+    }
+  }
+
+  .gd-media-lg {
+    gd-media-controls + gd-media-thumbnail,
+    gd-media-content + gd-media-thumbnail {
+      .gd-media-thumbnail {
+        @media (min-width: $gd-screen-sm-min) {
+          margin-left: $gd-spacing-lg;
+        }
+      }
+    }
+  }
+
+  .gd-media-md {
+    gd-media-controls + gd-media-thumbnail,
+    gd-media-content + gd-media-thumbnail {
+      .gd-media-thumbnail {
+        @media (min-width: $gd-screen-sm-min) {
+          margin-left: $gd-spacing-md;
+        }
+      }
+    }
+  }
+
+  .gd-media-xs {
+    gd-media-controls + gd-media-thumbnail,
+    gd-media-content + gd-media-thumbnail {
+      .gd-media-thumbnail {
+        @media (min-width: $gd-screen-sm-min) {
+          margin-left: $gd-spacing-xs;
+        }
+      }
+    }
+  }
+}

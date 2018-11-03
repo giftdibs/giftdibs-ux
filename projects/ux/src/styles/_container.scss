@@ -23,6 +23,10 @@
   max-width: $gd-screen-xs-max;
 }
 
+.gd-container-xxs {
+  max-width: $gd-screen-xxs-max;
+}
+
 .gd-canvas {
   background-color: $gd-color-neutral-faint;
   position: absolute;

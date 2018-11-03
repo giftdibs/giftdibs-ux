@@ -1,9 +1,6 @@
 <div
-  class="gd-overlay"
+  class="gd-overlay gd-overlay-ignore-pointer-events"
   (click)="onOverlayClick()"
-  [ngClass]="{
-    'gd-overlay-ignore-pointer-events': allowClickThrough
-  }"
 >
   <ng-template
     #target>
