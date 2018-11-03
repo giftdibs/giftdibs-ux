@@ -1,3 +1,7 @@
+# 1.0.0-alpha.16 (2018-11-03)
+
+- Various bug fixes.
+
 # 1.0.0-alpha.15 (2018-10-30)
 
 - Added 'No results found' message to typeahead component.
