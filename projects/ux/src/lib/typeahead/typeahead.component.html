@@ -5,9 +5,25 @@
       <button
         class="gd-button gd-button-default"
         type="button"
+        [disabled]="disabled"
         (click)="onButtonClick();$event.stopPropagation();"
       >
-        {{ searchButtonText }}
+        <ng-container *ngIf="!isLoading else loadingIcon">
+          <gd-icon *ngIf="searchButtonIcon"
+            iconSize="1x"
+            [icon]="searchButtonIcon"
+          >
+          </gd-icon>
+          {{ searchButtonText }}
+        </ng-container>
+        <ng-template #loadingIcon>
+          <gd-icon
+            iconSize="1x"
+            icon="spinner"
+            [enableSpin]="true"
+          >
+          </gd-icon>
+        </ng-template>
       </button>
     </div>
   </ng-container>
@@ -20,6 +36,7 @@
     type="text"
     [attr.aria-describedby]="ariaDescribedBy"
     [attr.placeholder]="placeholder"
+    [disabled]="disabled"
     (focus)="searchInput.select()"
     (keyup.enter)="onButtonClick();$event.stopPropagation();"
     #searchInput

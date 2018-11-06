@@ -12,6 +12,7 @@ import {
 
 import {
   fromEvent,
+  Observable,
   Subject
 } from 'rxjs';
 
@@ -23,8 +24,6 @@ import { AffixConfig } from '../affix/affix-config';
 import { AffixHorizontalAlignment } from '../affix/affix-horizontal-alignment';
 import { AffixVerticalAlignment } from '../affix/affix-vertical-alignment';
 import { AffixService } from '../affix/affix.service';
-
-import { OverlayInstance } from '../overlay/overlay-instance';
 
 import { WindowRefService } from '../window/window-ref.service';
 
@@ -41,6 +40,10 @@ import { DropdownMenuItem } from './dropdown-menu-item';
   ]
 })
 export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestroy {
+  public get closed(): Observable<void> {
+    return this._closed;
+  }
+
   public set itemTemplate(value: TemplateRef<any>) {
     this._itemTemplate = value;
   }
@@ -75,6 +78,7 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
   private ngUnsubscribe = new Subject();
 
   private _activeIndex = -1;
+  private _closed = new Subject<void>();
   private _itemTemplate: TemplateRef<any>;
 
   @ViewChild('menuElementRef')
@@ -85,13 +89,8 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
     private changeDetector: ChangeDetectorRef,
     private context: DropdownMenuContext,
     private elementRef: ElementRef,
-    private overlayInstance: OverlayInstance<any>,
     private windowRef: WindowRefService
-  ) {
-    this.overlayInstance.backdropClick.subscribe(() => {
-      this.close();
-    });
-  }
+  ) { }
 
   public ngOnInit(): void {
     this.items = this.context.config.items;
@@ -111,6 +110,7 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
   public ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+    this._closed.complete();
   }
 
   public handleItemAction(item: DropdownMenuItem): void {
@@ -119,7 +119,8 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
   }
 
   public close(): void {
-    this.overlayInstance.destroy();
+    this._closed.next();
+    this._closed.complete();
     this.context.config.caller.nativeElement.focus();
   }
 
@@ -150,6 +151,15 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
     const nativeWindow = this.windowRef.nativeWindow;
 
     let isLastButtonFocused = false;
+
+    // Close after menu is clicked.
+    fromEvent(hostElement, 'click')
+      .pipe(
+        takeUntil(this.ngUnsubscribe)
+      )
+      .subscribe(() => {
+        this.close();
+      });
 
     // Close the menu with escape key.
     fromEvent(nativeWindow, 'keyup')

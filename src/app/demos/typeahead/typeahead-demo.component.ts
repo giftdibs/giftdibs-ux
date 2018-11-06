@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 
 import {
-  of
+  of, Subject
 } from 'rxjs';
 
 import {
@@ -33,6 +33,7 @@ export class TypeaheadDemoComponent implements OnInit {
 
   public findProductFunction: TypeaheadSearchFunction<any> = (searchText: string) => {
     const results = [];
+
     if (searchText === 'steve') {
       for (let i = 0; i < 15; i++) {
         results.push({
@@ -43,7 +44,15 @@ export class TypeaheadDemoComponent implements OnInit {
         });
       }
     }
-    return of(results);
+
+    const subject = new Subject<any>();
+
+    setTimeout(() => {
+      subject.next(results);
+      subject.complete();
+    }, 1000);
+
+    return subject;
   }
 
   public searchResultAction: TypeaheadSearchResultAction<any> = (result: any) => {

@@ -25,32 +25,28 @@ export class ModalService {
     private overlayService: OverlayService
   ) { }
 
-  public open<T>(
-    component: Type<T>,
-    config: ModalConfig
-  ): ModalInstance<T> {
+  public open<T>(component: Type<T>, config: ModalConfig): ModalInstance<T> {
     const settings = Object.assign({}, {
       providers: []
     }, config);
 
-    const modalInstance = new ModalInstance<T>();
-
     const overlayInstance = this.overlayService.attach(
       ModalWrapperComponent,
       {
+        destroyOnOverlayClick: false,
         showBackdrop: true
       }
     );
+
+    const wrapper = overlayInstance.componentInstance;
+    const modalInstance = new ModalInstance<T>(wrapper);
 
     settings.providers.push({
       provide: ModalInstance,
       useValue: modalInstance
     });
 
-    const wrapper = overlayInstance.componentInstance;
     const componentRef = wrapper.attach(component, settings);
-
-    modalInstance.wrapperInstance = wrapper;
 
     wrapper.closed.subscribe(() => {
       overlayInstance.destroy();

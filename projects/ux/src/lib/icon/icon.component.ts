@@ -44,7 +44,7 @@ export class IconComponent implements OnInit {
     ];
 
     if (this.enableSpin) {
-      classNames.push('fa-spin');
+      classNames.push('fa-pulse');
     }
 
     this.classNames = classNames.join(' ');

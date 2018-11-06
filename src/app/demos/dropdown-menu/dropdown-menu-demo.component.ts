@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DropdownMenuItem, ModalService } from 'projects/ux/src/public_api';
+import {
+  DropdownMenuItem,
+  ModalClosedEventArgs,
+  ModalService
+} from 'projects/ux/src/public_api';
 
 import { DropdownMenuDemoModalComponent } from './dropdown-menu-demo-modal.component';
 
@@ -43,6 +47,9 @@ export class DropdownMenuDemoComponent implements OnInit {
   }
 
   public openModal(): void {
-    this.modalService.open(DropdownMenuDemoModalComponent, {});
+    const modal = this.modalService.open(DropdownMenuDemoModalComponent, {});
+    modal.closed.subscribe((args: ModalClosedEventArgs) => {
+      console.log('modal closed:', args);
+    });
   }
 }

@@ -54,11 +54,16 @@ export class AlertService {
 
     const context = new AlertContext(alert);
     this.currentInstance = this.overlayService.attach(AlertComponent, {
+      destroyOnOverlayClick: false,
       keepAfterNavigationChange: alert.keepAfterNavigationChange,
       providers: [{
         provide: AlertContext,
         useValue: context
       }]
+    });
+
+    this.currentInstance.componentInstance.closed.subscribe(() => {
+      this.currentInstance.destroy();
     });
   }
 }

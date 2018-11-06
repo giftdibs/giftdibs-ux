@@ -37,6 +37,10 @@ export class DropdownMenuDemoModalComponent {
   ) { }
 
   public onCancelClicked(): void {
-    this.modal.close();
+    this.modal.close('cancel', {
+      data: {
+        foo: 'bar'
+      }
+    });
   }
 }

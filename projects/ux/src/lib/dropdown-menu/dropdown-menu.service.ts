@@ -49,6 +49,10 @@ export class DropdownMenuService {
 
     const dropdownInstance = new DropdownMenuInstance(overlayInstance);
 
+    dropdownInstance.componentInstance.closed.subscribe(() => {
+      overlayInstance.destroy();
+    });
+
     return dropdownInstance;
   }
 }

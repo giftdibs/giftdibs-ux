@@ -30,10 +30,10 @@ export class AlertDemoComponent implements OnInit {
   public openAlert(type: AlertType): void {
     switch (type) {
       case 'success':
-      this.alertService.success(this.message);
+      this.alertService.success(this.message, true);
       break;
       case 'info':
-      this.alertService.info(this.message);
+      this.alertService.info(this.message, true);
       break;
       case 'danger':
       this.alertService.error(this.message);

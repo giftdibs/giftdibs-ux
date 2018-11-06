@@ -6,7 +6,9 @@ import {
 
 import { NgModule } from '@angular/core';
 
-import { GridModule } from 'projects/ux/src/public_api';
+import {
+  GridModule
+} from 'projects/ux/src/public_api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

@@ -77,7 +77,7 @@
     gd-media-content + gd-media-thumbnail {
       .gd-media-thumbnail {
         @media (min-width: $gd-screen-sm-min) {
-          margin-left: $gd-spacing-xs;
+          margin-left: $gd-spacing-sm;
         }
       }
     }

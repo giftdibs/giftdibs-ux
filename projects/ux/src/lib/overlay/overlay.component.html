@@ -1,15 +1,13 @@
 <div
-  class="gd-overlay gd-overlay-ignore-pointer-events"
-  (click)="onOverlayClick()"
+  class="gd-overlay"
+  [ngClass]="{
+    'gd-overlay-ignore-pointer-events': allowClickThrough
+  }"
 >
-  <ng-template
-    #target>
-  </ng-template>
-</div>
-
-<ng-template #backdrop>
-  <div
-    class="gd-overlay-backdrop"
-  >
+  <div class="gd-overlay-content" (click)="$event.stopPropagation();">
+    <ng-template #target>
+    </ng-template>
   </div>
-</ng-template>
+  <div *ngIf="showBackdrop" class="gd-overlay-backdrop">
+  </div>
+</div>

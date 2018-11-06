@@ -6,29 +6,24 @@ import {
   Injectable,
   Injector,
   OnDestroy,
-  Renderer2,
-  RendererFactory2,
   Type
 } from '@angular/core';
 
-import { WindowRefService } from '../window/window-ref.service';
-
 import { OverlayConfig } from './overlay-config';
 import { OverlayDomAdapterService } from './overlay-dom-adapter.service';
+import { OverlayHostComponent } from './overlay-host.component';
 import { OverlayInstance } from './overlay-instance';
-import { OverlayComponent } from './overlay.component';
 
 @Injectable()
 export class OverlayService implements OnDestroy {
-  private host: ComponentRef<OverlayComponent>;
+  private host: ComponentRef<OverlayHostComponent>;
   private instances: OverlayInstance<any>[] = [];
 
   constructor(
     private adapter: OverlayDomAdapterService,
     private appRef: ApplicationRef,
     private injector: Injector,
-    private resolver: ComponentFactoryResolver,
-    private windowRef: WindowRefService
+    private resolver: ComponentFactoryResolver
   ) { }
 
   public ngOnDestroy(): void {
@@ -40,8 +35,9 @@ export class OverlayService implements OnDestroy {
     config?: OverlayConfig
   ): OverlayInstance<T> {
     const defaults: OverlayConfig = {
+      destroyOnOverlayClick: true,
       keepAfterNavigationChange: false,
-      preventBodyScroll: true,
+      preventBodyScroll: false,
       showBackdrop: false
     };
 
@@ -67,9 +63,9 @@ export class OverlayService implements OnDestroy {
     return instance;
   }
 
-  private createHostComponent(): ComponentRef<OverlayComponent> {
+  private createHostComponent(): ComponentRef<OverlayHostComponent> {
     const componentRef = this.resolver
-      .resolveComponentFactory(OverlayComponent)
+      .resolveComponentFactory(OverlayHostComponent)
       .create(this.injector);
 
     const domElem = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0];
@@ -80,7 +76,7 @@ export class OverlayService implements OnDestroy {
     return componentRef;
   }
 
-  private ensureHostExists(): ComponentRef<OverlayComponent> {
+  private ensureHostExists(): ComponentRef<OverlayHostComponent> {
     if (!this.host) {
       this.host = this.createHostComponent();
     }

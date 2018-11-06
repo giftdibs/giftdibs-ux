@@ -15,6 +15,7 @@ import {
 } from '../window/window-ref.service';
 
 import { OverlayDomAdapterService } from './overlay-dom-adapter.service';
+import { OverlayHostComponent } from './overlay-host.component';
 import { OverlayComponent } from './overlay.component';
 import { OverlayService } from './overlay.service';
 
@@ -24,10 +25,12 @@ import { OverlayService } from './overlay.service';
     RouterModule
   ],
   declarations: [
-    OverlayComponent
+    OverlayComponent,
+    OverlayHostComponent
   ],
   entryComponents: [
-    OverlayComponent
+    OverlayComponent,
+    OverlayHostComponent
   ],
   providers: [
     OverlayDomAdapterService,

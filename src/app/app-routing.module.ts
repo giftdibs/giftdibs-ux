@@ -29,6 +29,10 @@ const appRoutes: Routes = [
     loadChildren: 'src/app/demos/media/media-demo.module#MediaDemoModule'
   },
   {
+    path: 'demos/overlay',
+    loadChildren: 'src/app/demos/overlay/overlay-demo.module#OverlayDemoModule'
+  },
+  {
     path: 'demos/popover',
     loadChildren: 'src/app/demos/popover/popover-demo.module#PopoverDemoModule'
   },
@@ -39,6 +43,10 @@ const appRoutes: Routes = [
   {
     path: 'demos/typeahead',
     loadChildren: 'src/app/demos/typeahead/typeahead-demo.module#TypeaheadDemoModule'
+  },
+  {
+    path: 'demos/wait',
+    loadChildren: 'src/app/demos/wait/wait-demo.module#WaitDemoModule'
   }
 ];
 

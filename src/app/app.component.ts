@@ -40,6 +40,14 @@ export class AppComponent {
     {
       path: '/demos/alert',
       label: 'Alert'
+    },
+    {
+      path: '/demos/wait',
+      label: 'Wait'
+    },
+    {
+      path: '/demos/overlay',
+      label: 'Overlay'
     }
   ].sort(function (a: any, b: any): any {
     const keyA = a.label;

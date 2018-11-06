@@ -15,14 +15,15 @@ import { ModalClosedEventReason } from './modal-closed-event-reason';
 
 export class ModalInstance<T> {
   public componentInstance: T;
-  public set wrapperInstance(value: ModalWrapperComponent) {
-    this._wrapperInstance = value;
-    // Wait for the wrapper closed animation to complete before triggering closed event.
-    value.closed.subscribe(() => {
-      this._closed.emit(this.closedEventArgs);
-      this._closed.complete();
-    });
-  }
+
+  // public set wrapperInstance(value: ModalWrapperComponent) {
+  //   this._wrapperInstance = value;
+  //   // Wait for the wrapper closed animation to complete before triggering closed event.
+  //   value.closed.subscribe(() => {
+  //     this._closed.emit(this.closedEventArgs);
+  //     this._closed.complete();
+  //   });
+  // }
 
   public get closed(): Observable<ModalClosedEventArgs> {
     return this._closed;
@@ -31,13 +32,22 @@ export class ModalInstance<T> {
   private closedEventArgs: ModalClosedEventArgs;
 
   private _closed = new EventEmitter<ModalClosedEventArgs>();
-  private _wrapperInstance: ModalWrapperComponent;
+
+  constructor(
+    private wrapperInstance: ModalWrapperComponent
+  ) {
+    // Wait for the wrapper closed animation to complete before triggering closed event.
+    this.wrapperInstance.closed.subscribe(() => {
+      this._closed.emit(this.closedEventArgs);
+      this._closed.complete();
+    });
+  }
 
   public close(
     reason: ModalClosedEventReason = 'cancel',
     data?: any
   ): void {
     this.closedEventArgs = { reason, data };
-    this._wrapperInstance.close();
+    this.wrapperInstance.close();
   }
 }

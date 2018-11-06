@@ -25,6 +25,7 @@ import {
 import {
   debounceTime,
   distinctUntilChanged,
+  finalize,
   takeUntil,
   takeWhile
 } from 'rxjs/operators';
@@ -71,6 +72,9 @@ export class TypeaheadComponent
   public placeholder: string;
 
   @Input()
+  public searchButtonIcon: string;
+
+  @Input()
   public searchButtonText = 'Search';
 
   @Input()
@@ -99,6 +103,7 @@ export class TypeaheadComponent
     return this._value;
   }
 
+  public isLoading = false;
   public disabled = false;
 
   @ViewChild('searchInput')
@@ -112,6 +117,7 @@ export class TypeaheadComponent
   constructor(
     private affixService: AffixService,
     private changeDetector: ChangeDetectorRef,
+    private elementRef: ElementRef,
     private domAdapter: TypeaheadDomAdapterService,
     private overlayService: OverlayService
   ) { }
@@ -148,13 +154,13 @@ export class TypeaheadComponent
         }
       });
 
-    fromEvent(document, 'click')
-      .pipe(
-        takeUntil(this.ngUnsubscribe)
-      )
-      .subscribe(() => {
-        this.removeResults();
-      });
+    // fromEvent(document, 'click')
+    //   .pipe(
+    //     takeUntil(this.ngUnsubscribe)
+    //   )
+    //   .subscribe(() => {
+    //     this.removeResults();
+    //   });
 
     // Update the value of the input.
     input.value = this._value || '';
@@ -203,10 +209,16 @@ export class TypeaheadComponent
       return;
     }
 
+    this.isLoading = true;
+    this.disabled = true;
     this.value = searchText;
 
     this.searchFunction.call({}, searchText)
       .pipe(
+        finalize(() => {
+          this.isLoading = false;
+          this.disabled = false;
+        }),
         takeUntil(this.ngUnsubscribe)
       )
       .subscribe((results: any[]) => {
@@ -243,7 +255,8 @@ export class TypeaheadComponent
       providers: [{
         provide: TypeaheadResultsContext,
         useValue: resultsContext
-      }]
+      }],
+      destroyOnOverlayClick: true
     };
 
     this.overlayInstance = this.overlayService.attach(
@@ -267,9 +280,9 @@ export class TypeaheadComponent
       this.changeDetector.markForCheck();
     });
 
-    this.overlayInstance.backdropClick.subscribe(() => {
-      this.overlayInstance.destroy();
-    });
+    // this.overlayInstance.click.subscribe(() => {
+    //   this.overlayInstance.destroy();
+    // });
 
     this.positionResults();
     this.changeDetector.detectChanges();
@@ -301,7 +314,7 @@ export class TypeaheadComponent
 
       this.domAdapter.matchWidth(
         resultsRef,
-        this.searchInput
+        this.elementRef
       );
 
       this.overlayInstance.componentInstance.showResults();

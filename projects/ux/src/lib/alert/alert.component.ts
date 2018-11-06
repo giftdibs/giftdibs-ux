@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  OnDestroy,
   OnInit
 } from '@angular/core';
 
@@ -9,12 +10,13 @@ import {
 } from '@angular/animations';
 
 import {
-  gdAnimationEmerge
-} from '../animation/emerge';
+  Observable,
+  Subject
+} from 'rxjs';
 
 import {
-  OverlayInstance
-} from '../overlay/overlay-instance';
+  gdAnimationEmerge
+} from '../animation/emerge';
 
 import { Alert } from './alert';
 import { AlertContext } from './alert-context';
@@ -28,10 +30,7 @@ import { AlertContext } from './alert-context';
     gdAnimationEmerge
   ]
 })
-export class AlertComponent implements OnInit {
-  public alert: Alert;
-  public animationState: 'open' | 'closed' = 'closed';
-
+export class AlertComponent implements OnInit, OnDestroy {
   public get ariaLive(): string {
     let live: string;
 
@@ -47,9 +46,17 @@ export class AlertComponent implements OnInit {
     return live;
   }
 
+  public get closed(): Observable<void> {
+    return this._closed;
+  }
+
+  public alert: Alert;
+  public animationState: 'open' | 'closed' = 'closed';
+
+  private _closed = new Subject<void>();
+
   constructor(
-    private context: AlertContext,
-    private instance: OverlayInstance<AlertComponent>
+    private context: AlertContext
   ) { }
 
   public ngOnInit(): void {
@@ -57,9 +64,14 @@ export class AlertComponent implements OnInit {
     this.animationState = 'open';
   }
 
+  public ngOnDestroy(): void {
+    this._closed.complete();
+  }
+
   public onAnimationDone(event: AnimationEvent): void {
     if (event.toState === 'closed') {
-      this.instance.destroy();
+      this._closed.next();
+      this._closed.complete();
     }
   }
 

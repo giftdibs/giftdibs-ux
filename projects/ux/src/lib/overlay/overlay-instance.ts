@@ -1,21 +1,19 @@
 import {
-  EventEmitter,
-  Injectable
+  EventEmitter
 } from '@angular/core';
 
 import {
   Observable
 } from 'rxjs';
 
-@Injectable()
 export class OverlayInstance<T> {
   public componentInstance: T;
 
-  public get backdropClick(): Observable<void> {
-    return this._backdropClick;
-  }
+  // public get closed(): Observable<void> {
+  //   return this._closed;
+  // }
 
-  private _backdropClick = new EventEmitter<void>();
+  // private _closed = new EventEmitter<void>();
 
   public get destroyed(): Observable<void> {
     return this._destroyed;
@@ -23,9 +21,14 @@ export class OverlayInstance<T> {
 
   private _destroyed = new EventEmitter<void>();
 
-  public triggerBackdropClick(): void {
-    this._backdropClick.next();
-  }
+  // public triggerBackdropClick(): void {
+  //   this._backdropClick.next();
+  // }
+
+  // public close(): void {
+  //   this._closed.next();
+  //   this._closed.complete();
+  // }
 
   public destroy(): void {
     this._destroyed.next();

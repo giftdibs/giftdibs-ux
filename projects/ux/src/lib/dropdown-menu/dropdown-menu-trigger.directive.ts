@@ -46,9 +46,7 @@ export class DropdownMenuTriggerDirective {
   ) { }
 
   @HostListener('click', ['$event'])
-  public onClick(event: any): void {
-    event.stopPropagation();
-
+  public onClick(): void {
     if (this.menuInstance) {
       this.menuInstance.componentInstance.close();
       this.menuInstance = undefined;
