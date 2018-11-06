@@ -1,0 +1,4 @@
+@mixin gd_focus_indicator() {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba($gd-color-info, .5) !important;
+}

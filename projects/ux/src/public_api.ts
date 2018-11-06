@@ -94,6 +94,9 @@ export * from './lib/typeahead/typeahead-search-function';
 export * from './lib/typeahead/typeahead-search-result-action';
 export * from './lib/typeahead/typeahead.module';
 
+export * from './lib/utils/data-url-to-file';
+export * from './lib/utils/to-data-url';
+
 export * from './lib/wait/wait.module';
 
 export * from './lib/window/window-ref.service';
