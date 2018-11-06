@@ -1,3 +1,8 @@
+# 1.0.0-alpha.17 (2018-11-06)
+
+- Added file reader utils.
+- Refactored overlay service.
+
 # 1.0.0-alpha.16 (2018-11-03)
 
 - Various bug fixes.
