@@ -8,15 +8,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: $gd-spacing-sm;
+  margin-right: $gd-spacing;
   width: 80px;
   width: 80px;
 }
 
 .gd-media-thumbnail-xs {
-  width: 38px;
-  height: 38px;
-  margin-right: $gd-spacing-xs;
+  width: 30px;
+  height: 30px;
 }
 
 .gd-media-thumbnail-sm {
@@ -25,7 +24,6 @@
 
 .gd-media-thumbnail-md {
   @media (min-width: $gd-screen-sm-min) {
-    margin-right: $gd-spacing-md;
     width: 110px;
     height: 110px;
   }
@@ -35,7 +33,6 @@
   @media (min-width: $gd-screen-sm-min) {
     width: 150px;
     height: 150px;
-    margin-right: $gd-spacing-lg;
   }
 }
 
@@ -45,40 +42,7 @@
     gd-media-content + gd-media-thumbnail {
       .gd-media-thumbnail {
         margin-right: 0;
-        margin-left: $gd-spacing-sm;
-      }
-    }
-  }
-
-  .gd-media-lg {
-    gd-media-controls + gd-media-thumbnail,
-    gd-media-content + gd-media-thumbnail {
-      .gd-media-thumbnail {
-        @media (min-width: $gd-screen-sm-min) {
-          margin-left: $gd-spacing-lg;
-        }
-      }
-    }
-  }
-
-  .gd-media-md {
-    gd-media-controls + gd-media-thumbnail,
-    gd-media-content + gd-media-thumbnail {
-      .gd-media-thumbnail {
-        @media (min-width: $gd-screen-sm-min) {
-          margin-left: $gd-spacing-md;
-        }
-      }
-    }
-  }
-
-  .gd-media-xs {
-    gd-media-controls + gd-media-thumbnail,
-    gd-media-content + gd-media-thumbnail {
-      .gd-media-thumbnail {
-        @media (min-width: $gd-screen-sm-min) {
-          margin-left: $gd-spacing-sm;
-        }
+        margin-left: $gd-spacing;
       }
     }
   }

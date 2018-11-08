@@ -1,7 +1,10 @@
 @import '../../styles/mixins';
 
 .gd-card-header {
-  // display: flex;
-  // align-items: baseline;
   font-weight: $gd-font-weight-normal;
+  margin-left: -$gd-spacing;
+  margin-right: -$gd-spacing;
+  padding-left: $gd-spacing;
+  padding-right: $gd-spacing;
+  padding-bottom: $gd-spacing;
 }

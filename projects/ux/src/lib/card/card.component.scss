@@ -1,7 +1,10 @@
 @import '../../styles/mixins';
 
 .gd-card-wrapper {
-  padding: $gd-spacing-md;
+  padding: $gd-spacing;
+  border-radius: $gd-border-radius-sm;
+  border: 1px solid $gd-color-neutral-lightest;
+  background-color: #fff;
 }
 
 .gd-card-anchor {

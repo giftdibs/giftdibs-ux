@@ -12,8 +12,8 @@ body {
   font-family: $gd-font-family;
   color: $gd-text-color-default;
   line-height: $gd-line-height;
-  background-color: #fff;
   font-weight: $gd-font-weight-normal;
+  background-color: #fafafa;
 }
 
 a {
@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: $gd-font-size-xl;
+  margin-bottom: $gd-spacing * 2;
 }
 
 h2 {
@@ -131,4 +132,11 @@ strong {
   padding-left: $gd-spacing;
   list-style: disc;
   list-style-position: inside;
+}
+
+.gd-text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
 }

@@ -85,10 +85,6 @@ export class PopoverDirective {
       }
     });
 
-    // this.overlayInstance.click.subscribe(() => {
-    //   this.overlayInstance.destroy();
-    // });
-
     this.overlayInstance.componentInstance.closed.subscribe(() => {
       this.overlayInstance.destroy();
     });

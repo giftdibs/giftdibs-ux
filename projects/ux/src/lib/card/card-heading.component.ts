@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
-  Component
+  Component,
+  Input
 } from '@angular/core';
 
 @Component({
@@ -9,4 +10,7 @@ import {
   styleUrls: ['./card-heading.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CardHeadingComponent { }
+export class CardHeadingComponent {
+  @Input()
+  public multiline = true;
+}

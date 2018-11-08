@@ -12,8 +12,10 @@ $gd-zindex-alert: 999 !default;
 
 $gd-box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
 $gd-box-shadow-lg: 0 0 50px rgba(0, 0, 0, 0.4);
-$gd-border-radius: 0.75rem !default;
-$gd-border-radius-sm: 0.35rem !default;
+$gd-box-shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.15);
+
+$gd-border-radius: 8px !default;
+$gd-border-radius-sm: 4px !default;
 
 $gd-spacing-padding-squish: $gd-spacing-md $gd-spacing !default;
 $gd-spacing-padding-squish-compact: $gd-spacing-sm $gd-spacing-lg !default;

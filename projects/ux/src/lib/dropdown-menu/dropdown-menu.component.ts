@@ -152,15 +152,6 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
 
     let isLastButtonFocused = false;
 
-    // Close after menu is clicked.
-    fromEvent(hostElement, 'click')
-      .pipe(
-        takeUntil(this.ngUnsubscribe)
-      )
-      .subscribe(() => {
-        this.close();
-      });
-
     // Close the menu with escape key.
     fromEvent(nativeWindow, 'keyup')
       .pipe(

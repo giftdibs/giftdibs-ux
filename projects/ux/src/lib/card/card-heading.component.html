@@ -1,3 +1,8 @@
-<h2 class="gd-card-heading">
+<h2
+  class="gd-card-heading"
+  [ngClass]="{
+    'gd-text-overflow': !multiline
+  }"
+>
   <ng-content></ng-content>
 </h2>

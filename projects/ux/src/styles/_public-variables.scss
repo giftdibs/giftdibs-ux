@@ -17,7 +17,7 @@ $gd-font-weight-normal: 400 !default;
 $gd-font-weight-bold: 700 !default;
 $gd-font-weight-black: 900 !default;
 $gd-line-height: 1.5 !default;
-$gd-line-height-reduced: 1.2 !default;
+$gd-line-height-reduced: 1.1 !default;
 
 // COLORS
 
@@ -74,7 +74,7 @@ $gd-color-neutral: desaturate(lighten($gd-color-primary, 15%), 65%) !default;
 $gd-color-neutral-light: lighten($gd-color-neutral, 15%) !default;
 $gd-color-neutral-lighter: lighten($gd-color-neutral, 30%) !default;
 $gd-color-neutral-lightest: lighten($gd-color-neutral, 40%) !default;
-$gd-color-neutral-faint: lighten($gd-color-neutral, 42%) !default;
+$gd-color-neutral-faint: lighten($gd-color-neutral, 45%) !default;
 $gd-color-neutral-dark: darken($gd-color-neutral, 20%) !default;
 $gd-color-neutral-darker: darken($gd-color-neutral, 30%) !default;
 $gd-color-neutral-darkest: #000 !default;

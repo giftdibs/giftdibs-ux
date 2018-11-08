@@ -1,0 +1,11 @@
+@import '../../../../projects/ux/src/styles/public-variables';
+
+.app-priority {
+  color: $gd-color-neutral-lightest;
+  font-size: 12px;
+  ::ng-deep {
+    .gd-icon {
+      margin-left: -1px;
+    }
+  }
+}
