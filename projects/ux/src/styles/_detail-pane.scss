@@ -1,9 +1,13 @@
 @import 'variables';
 
 .gd-detail-pane {
-  padding: $gd-spacing * 2;
+  padding: $gd-spacing;
   margin-bottom: $gd-spacing;
   border-radius: $gd-border-radius;
   background-color: #fff;
   box-shadow: $gd-box-shadow-subtle;
+
+  @media (min-width: $gd-screen-sm-min) {
+    padding: $gd-spacing * 2;
+  }
 }

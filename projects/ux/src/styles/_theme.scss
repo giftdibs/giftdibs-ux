@@ -54,6 +54,13 @@ strong {
   font-weight: $gd-font-weight-bold;
 }
 
+.gd-date {
+  color: $gd-color-neutral-light;
+  font-size: 10px;
+  letter-spacing: .2px;
+  text-transform: uppercase;
+}
+
 .gd-screen-reader-only {
   position: absolute;
   width: 1px;

@@ -30,6 +30,8 @@ export * from './lib/confirm/confirm-context';
 export * from './lib/confirm/confirm.module';
 export * from './lib/confirm/confirm.service';
 
+export * from './lib/datetime/datetime.module';
+
 // do not export datepicker yet
 
 export * from './lib/dropdown-menu/dropdown-menu-config';
