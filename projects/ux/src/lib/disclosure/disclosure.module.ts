@@ -5,10 +5,14 @@ import {
 import {
   CommonModule
 } from '@angular/common';
-import { DisclosureComponent } from './disclosure.component';
-import { DisclosureHeadingComponent } from './disclosure-heading.component';
+
+import {
+  IconModule
+} from '../icon/icon.module';
+
 import { DisclosureBodyComponent } from './disclosure-body.component';
-import { IconModule } from '../icon/icon.module';
+import { DisclosureHeadingComponent } from './disclosure-heading.component';
+import { DisclosureComponent } from './disclosure.component';
 
 @NgModule({
   imports: [

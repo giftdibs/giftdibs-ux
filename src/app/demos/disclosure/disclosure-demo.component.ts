@@ -9,7 +9,5 @@ export class DisclosureDemoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  public ngOnInit(): void {}
 }

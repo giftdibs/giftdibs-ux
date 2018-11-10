@@ -1,3 +1,9 @@
+# 1.0.0-alpha.18 (2018-11-10)
+
+- Updated styles for card and media modules.
+- Added friendly date pipe.
+- Added disclosure module.
+
 # 1.0.0-alpha.17 (2018-11-06)
 
 - Added file reader utils.
