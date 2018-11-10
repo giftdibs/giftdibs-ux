@@ -34,6 +34,8 @@ export * from './lib/datetime/datetime.module';
 
 // do not export datepicker yet
 
+export * from './lib/disclosure/disclosure.module';
+
 export * from './lib/dropdown-menu/dropdown-menu-config';
 export * from './lib/dropdown-menu/dropdown-menu-context';
 export * from './lib/dropdown-menu/dropdown-menu-instance';

@@ -36,7 +36,6 @@
   user-select: none;
   cursor: pointer;
   font-weight: $gd-font-weight-bold;
-  border-radius: 50px;
 
   &:disabled {
     @include gd_disabled();
@@ -131,7 +130,7 @@
 }
 
 .gd-button-tab-selected {
-  background-color: $gd-color-neutral-faint;
+  background-color: $gd-color-neutral-lightest;
   color: $gd-text-color-dark;
 }
 

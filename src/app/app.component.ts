@@ -52,6 +52,10 @@ export class AppComponent {
     {
       path: '/demos/card',
       label: 'Card'
+    },
+    {
+      path: '/demos/disclosure',
+      label: 'Disclosure'
     }
   ].sort(function (a: any, b: any): any {
     const keyA = a.label;

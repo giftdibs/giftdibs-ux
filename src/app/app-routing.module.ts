@@ -21,6 +21,10 @@ const appRoutes: Routes = [
     loadChildren: 'src/app/demos/card/card-demo.module#CardDemoModule'
   },
   {
+    path: 'demos/disclosure',
+    loadChildren: 'src/app/demos/disclosure/disclosure-demo.module#DisclosureDemoModule'
+  },
+  {
     path: 'demos/dropdown-menu',
     loadChildren: 'src/app/demos/dropdown-menu/dropdown-menu-demo.module#DropdownMenuDemoModule'
   },

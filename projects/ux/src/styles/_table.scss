@@ -3,19 +3,36 @@
 .gd-table {
   width: 100%;
   margin: $gd-spacing 0;
-  background-color: $gd-color-neutral-faint;
-  border: 1px solid $gd-color-neutral-lighter;
+  background-color: rgba(0,0,0,0.04);
+  border: 0;
+  border-radius: $gd-border-radius-sm;
 
   td,
   th {
     text-align: left;
     padding: $gd-spacing-padding-squish-compact;
-    border-bottom: 1px solid $gd-color-neutral-lighter;
+    border-bottom: 2px solid #fff;
   }
 
   th {
     width: 1%;
     white-space: nowrap;
     font-weight: $gd-font-weight-bold;
+    background-color: rgba(0,0,0,0.02);
+  }
+
+  tr:last-child {
+    td,
+    th {
+      border-bottom: 0;
+    }
+  }
+}
+
+.gd-table-condensed {
+  td,
+  th {
+    font-size: 85%;
+    padding: 4px 10px;
   }
 }

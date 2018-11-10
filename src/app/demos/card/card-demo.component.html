@@ -169,7 +169,7 @@
     screenSmall="6"
     screenMedium="4"
   >
-    <gd-card>
+    <gd-card [route]="{commands:['/demos', 'alert']}">
       <gd-card-thumbnail>
         <gd-thumbnail
           imageSource="https://giftdibs.s3.amazonaws.com/5bd26b69be29a6f2123a5ec5-1hWOuDEsvLSe3evDB78geJHAVUSmGkxV"
@@ -179,7 +179,7 @@
       </gd-card-thumbnail>
       <gd-card-body>
         <gd-card-heading [multiline]="false">
-          <a href="">Active Ribbed Cropped Cami</a>
+          <a href="">This card has a route applied</a>
         </gd-card-heading>
         <div>
           <div class="app-priority">

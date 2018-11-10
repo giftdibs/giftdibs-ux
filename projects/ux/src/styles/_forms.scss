@@ -14,7 +14,7 @@
   @include gd_form_control();
   display: block;
   width: 100%;
-  border-color: $gd-color-neutral-dark;
+  border-color: $gd-color-neutral;
   background-color: #fff;
 
   &:disabled {
