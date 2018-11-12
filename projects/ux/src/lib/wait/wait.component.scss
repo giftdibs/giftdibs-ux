@@ -1,7 +1,6 @@
 @import '../../styles/mixins';
 
-:host {
-  background-color: rgba(255, 255, 255, 0.4);
+.gd-wait {
   z-index: 1;
   display: flex;
   align-items: center;
@@ -12,9 +11,10 @@
   right: 0;
   bottom: 0;
   pointer-events: none;
-}
-
-.gd-wait {
   font-size: 40px;
   color: $gd-color-neutral;
+}
+
+.gd-wait-backdrop {
+  background-color: rgba(255, 255, 255, 0.4);
 }

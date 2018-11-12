@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
-  Component
+  Component,
+  Input
 } from '@angular/core';
 
 @Component({
@@ -9,4 +10,7 @@ import {
   styleUrls: ['./wait.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WaitComponent {}
+export class WaitComponent {
+  @Input()
+  public showBackdrop = true;
+}

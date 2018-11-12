@@ -1,4 +1,9 @@
-<div class="gd-wait">
+<div
+  class="gd-wait"
+  [ngClass]="{
+    'gd-wait-backdrop': showBackdrop
+  }"
+>
   <gd-icon
     icon="spinner"
     [enableSpin]="true"
