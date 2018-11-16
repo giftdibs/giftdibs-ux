@@ -135,10 +135,17 @@ strong {
 }
 
 .gd-unordered-list {
-  margin: 0 0 $gd-spacing * 2;
+  margin: $gd-spacing 0;
   padding-left: $gd-spacing;
   list-style: disc;
-  list-style-position: inside;
+  list-style-position: outside;
+}
+
+.gd-ordered-list {
+  margin: $gd-spacing 0;
+  padding-left: $gd-spacing;
+  list-style: decimal;
+  list-style-position: outside;
 }
 
 .gd-text-overflow {
