@@ -61,9 +61,8 @@ select.gd-form-control {
   text-align: center;
   align-items: center;
   padding: $gd-spacing-padding-squish-compact;
-  background-color: $gd-color-neutral-dark;
-  color: #fff;
-  border: 1px solid transparent;
+  background-color: $gd-color-neutral-lightest;
+  border: 1px solid $gd-color-neutral;
   border-radius: $gd-border-radius-sm;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -75,9 +74,8 @@ select.gd-form-control {
   text-align: center;
   align-items: center;
   padding: $gd-spacing-padding-squish-compact;
-  background-color: $gd-color-neutral-dark;
-  color: #fff;
-  border: 1px solid transparent;
+  background-color: $gd-color-neutral-lightest;
+  border: 1px solid $gd-color-neutral;
   border-radius: $gd-border-radius-sm;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;

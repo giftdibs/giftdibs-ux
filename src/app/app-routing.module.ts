@@ -21,6 +21,10 @@ const appRoutes: Routes = [
     loadChildren: 'src/app/demos/card/card-demo.module#CardDemoModule'
   },
   {
+    path: 'demos/confirm',
+    loadChildren: 'src/app/demos/confirm/confirm-demo.module#ConfirmDemoModule'
+  },
+  {
     path: 'demos/disclosure',
     loadChildren: 'src/app/demos/disclosure/disclosure-demo.module#DisclosureDemoModule'
   },
@@ -31,6 +35,10 @@ const appRoutes: Routes = [
   {
     path: 'demos/grid',
     loadChildren: 'src/app/demos/grid/grid-demo.module#GridDemoModule'
+  },
+  {
+    path: 'demos/image-uploader',
+    loadChildren: 'src/app/demos/image-uploader/image-uploader-demo.module#ImageUploaderDemoModule'
   },
   {
     path: 'demos/media',

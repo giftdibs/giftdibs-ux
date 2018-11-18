@@ -9,7 +9,7 @@
   flex-direction: row;
 
   &.gd-row-reverse {
-    @media (min-width: $gd-screen-sm-min) {
+    @media (min-width: $gd-screen-xs-min) {
       flex-direction: row-reverse;
     }
   }

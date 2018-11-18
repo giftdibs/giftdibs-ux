@@ -19,6 +19,7 @@
   padding: $gd-spacing-padding-squish;
   border-radius: $gd-border-radius-sm;
   max-width: 95%;
+  overflow: auto;
 
   @media (max-width: $gd-screen-xs-max) {
     width: 80% !important;
@@ -33,7 +34,6 @@
 
 .gd-popover-content {
   height: 100%;
-  overflow: auto;
 }
 
 .gd-popover-hidden {

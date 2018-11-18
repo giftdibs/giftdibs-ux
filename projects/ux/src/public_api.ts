@@ -55,6 +55,7 @@ export * from './lib/icon/icon-size';
 export * from './lib/icon/icon-style';
 export * from './lib/icon/icon.module';
 
+export * from './lib/image-uploader/image-uploader-orientation';
 export * from './lib/image-uploader/image-uploader.module';
 
 export * from './lib/media/media.module';

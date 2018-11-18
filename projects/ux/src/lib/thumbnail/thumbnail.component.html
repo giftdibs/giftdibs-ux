@@ -36,11 +36,13 @@
       'background-image': (imageSource && size !== 'static') ? 'url(' + imageSource + ')' : ''
     }"
   >
-    <gd-icon *ngIf="!imageSource"
-      [icon]="icon"
-      [iconSize]="iconSize"
-      [iconStyle]="iconStyle"
-    ></gd-icon>
+    <ng-template [ngIf]="!imageSource">
+      <gd-icon
+        [icon]="icon"
+        [iconSize]="iconSize"
+        [iconStyle]="iconStyle"
+      ></gd-icon>
+    </ng-template>
     <img *ngIf="size === 'static' && imageSource"
       class="gd-thumbnail-image"
       [attr.alt]="altText"

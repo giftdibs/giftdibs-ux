@@ -5,8 +5,8 @@ $gd-checkbox-size: #{$gd-line-height}rem;
 .gd-checkbox {
   cursor: pointer;
   display: inline-flex;
-  white-space: nowrap;
-  align-items: baseline;
+  align-items: center;
+  line-height: $gd-line-height-reduced;
 }
 
 .gd-checkbox-checked {

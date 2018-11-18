@@ -34,6 +34,7 @@ export class ModalService {
       ModalWrapperComponent,
       {
         destroyOnOverlayClick: false,
+        preventBodyScroll: true,
         showBackdrop: true
       }
     );

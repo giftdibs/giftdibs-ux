@@ -25,7 +25,8 @@ export class ConfirmService {
         provide: ConfirmContext,
         useValue: context
       }],
-      showBackdrop: true
+      showBackdrop: true,
+      destroyOnOverlayClick: false
     });
 
     context.answered.subscribe((answer: ConfirmAnswer) => {

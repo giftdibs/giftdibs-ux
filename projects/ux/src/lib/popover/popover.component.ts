@@ -143,13 +143,13 @@ export class PopoverComponent implements OnDestroy {
       this.assignFocusableElements();
     });
 
-    fromEvent(popoverElement, 'click')
-      .pipe(
-        takeUntil(this.ngUnsubscribe)
-      )
-      .subscribe((event: any) => {
-        event.stopPropagation();
-      });
+    // fromEvent(popoverElement, 'click')
+    //   .pipe(
+    //     takeUntil(this.ngUnsubscribe)
+    //   )
+    //   .subscribe((event: any) => {
+    //     event.stopPropagation();
+    //   });
 
     fromEvent(popoverElement, 'keydown')
       .pipe(

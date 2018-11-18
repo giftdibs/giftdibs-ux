@@ -16,9 +16,14 @@ import {
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
 
+import {
+  ImageUploaderOrientation
+} from './image-uploader-orientation';
+
 @Component({
   selector: 'gd-image-uploader',
   templateUrl: './image-uploader.component.html',
+  styleUrls: ['./image-uploader.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [{
     provide: NG_VALUE_ACCESSOR,
@@ -30,6 +35,9 @@ import {
 export class ImageUploaderComponent implements OnDestroy, ControlValueAccessor {
   @Input()
   public allowUrl = true;
+
+  @Input()
+  public orientation: ImageUploaderOrientation = ImageUploaderOrientation.Horizontal;
 
   public get value(): string {
     return this._value;

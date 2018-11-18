@@ -7,12 +7,12 @@ import {
 } from '@angular/common';
 
 import {
-  IconModule
-} from '../icon/icon.module';
+  GridModule
+} from '../grid/grid.module';
 
 import {
-  MediaModule
-} from '../media/media.module';
+  IconModule
+} from '../icon/icon.module';
 
 import {
   ThumbnailModule
@@ -25,8 +25,8 @@ import {
 @NgModule({
   imports: [
     CommonModule,
+    GridModule,
     IconModule,
-    MediaModule,
     ThumbnailModule
   ],
   declarations: [
