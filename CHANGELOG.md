@@ -1,3 +1,8 @@
+# 1.0.0-alpha.19 (2018-11-17)
+
+- Fixed overlay click events
+- Added orientation to image uploader
+
 # 1.0.0-alpha.18 (2018-11-10)
 
 - Updated styles for card and media modules.
