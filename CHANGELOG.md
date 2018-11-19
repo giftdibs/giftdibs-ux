@@ -1,3 +1,8 @@
+# 1.0.0-alpha.20 (2018-11-18)
+
+- Added media query service.
+- Fixed popover and dropdown backdrops to close when clicked on mobile devices.
+
 # 1.0.0-alpha.19 (2018-11-17)
 
 - Fixed overlay click events
