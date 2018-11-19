@@ -58,6 +58,10 @@ export * from './lib/icon/icon.module';
 export * from './lib/image-uploader/image-uploader-orientation';
 export * from './lib/image-uploader/image-uploader.module';
 
+export * from './lib/media-query/media-query-breakpoint';
+export * from './lib/media-query/media-query.module';
+export * from './lib/media-query/media-query.service';
+
 export * from './lib/media/media.module';
 export * from './lib/media/media-size';
 

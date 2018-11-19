@@ -41,6 +41,10 @@ const appRoutes: Routes = [
     loadChildren: 'src/app/demos/image-uploader/image-uploader-demo.module#ImageUploaderDemoModule'
   },
   {
+    path: 'demos/media-query',
+    loadChildren: 'src/app/demos/media-query/media-query-demo.module#MediaQueryDemoModule'
+  },
+  {
     path: 'demos/media',
     loadChildren: 'src/app/demos/media/media-demo.module#MediaDemoModule'
   },

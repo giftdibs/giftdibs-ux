@@ -64,6 +64,10 @@ export class AppComponent {
     {
       path: '/demos/confirm',
       label: 'Confirm'
+    },
+    {
+      path: '/demos/media-query',
+      label: 'Media Query'
     }
   ].sort(function (a: any, b: any): any {
     const keyA = a.label;
