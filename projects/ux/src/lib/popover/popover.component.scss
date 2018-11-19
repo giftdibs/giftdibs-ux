@@ -20,10 +20,12 @@
   padding: $gd-spacing-padding-squish;
   border-radius: $gd-border-radius-sm;
   max-width: 95%;
+  max-height: 100%;
   overflow: auto;
 
   @media (max-width: $gd-screen-xs-max) {
     width: 80% !important;
+    max-height: 80% !important;
     left: auto !important;
     top: auto !important;
   }

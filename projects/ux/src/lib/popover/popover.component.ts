@@ -94,7 +94,7 @@ export class PopoverComponent implements OnDestroy {
     this.popoverRef.nativeElement.focus();
   }
 
-  private positionPopover(): void {
+  public positionPopover(): void {
     this.windowRef.nativeWindow.setTimeout(() => {
       this.affixService.affixTo(
         this.popoverRef,

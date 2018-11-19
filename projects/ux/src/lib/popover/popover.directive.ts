@@ -3,8 +3,18 @@ import {
   ElementRef,
   HostListener,
   Input,
+  OnDestroy,
+  OnInit,
   TemplateRef
 } from '@angular/core';
+
+import {
+  Subject
+} from 'rxjs';
+
+import {
+  takeUntil
+} from 'rxjs/operators';
 
 import {
   OverlayInstance
@@ -23,13 +33,21 @@ import {
 } from '../affix/affix-vertical-alignment';
 
 import {
+  PopoverMessage
+} from './popover-message';
+
+import {
+  PopoverMessageType
+} from './popover-message-type';
+
+import {
   PopoverComponent
 } from './popover.component';
 
 @Directive({
   selector: '[gdPopover]'
 })
-export class PopoverDirective {
+export class PopoverDirective implements OnInit, OnDestroy {
   @Input()
   public gdPopover: TemplateRef<any>;
 
@@ -39,12 +57,31 @@ export class PopoverDirective {
   @Input()
   public gdPopoverVerticalAlignment: AffixVerticalAlignment;
 
+  @Input()
+  public gdPopoverMessageStream = new Subject<PopoverMessage>();
+
+  private ngUnsubscribe = new Subject();
   private overlayInstance: OverlayInstance<PopoverComponent>;
 
   constructor(
     private elementRef: ElementRef,
     private overlayService: OverlayService
   ) { }
+
+  public ngOnInit(): void {
+    if (this.gdPopoverMessageStream) {
+      this.gdPopoverMessageStream
+        .pipe(takeUntil(this.ngUnsubscribe))
+        .subscribe((message: PopoverMessage) => {
+          this.handleIncomingMessage(message);
+        });
+    }
+  }
+
+  public ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
 
   @HostListener('keydown', ['$event'])
   public onKeyDown(event: any): void {
@@ -92,5 +129,17 @@ export class PopoverDirective {
     this.overlayInstance.destroyed.subscribe(() => {
       this.overlayInstance = undefined;
     });
+  }
+
+  private handleIncomingMessage(message: PopoverMessage): void {
+    switch (message.type) {
+      case PopoverMessageType.Reposition:
+      this.overlayInstance.componentInstance.positionPopover();
+      break;
+
+      case PopoverMessageType.Close:
+      this.overlayInstance.componentInstance.close();
+      break;
+    }
   }
 }

@@ -84,6 +84,8 @@ export * from './lib/overlay/overlay.service';
 export * from './lib/password-viewer/password-viewer.module';
 
 export * from './lib/popover/popover-config';
+export * from './lib/popover/popover-message';
+export * from './lib/popover/popover-message-type';
 export * from './lib/popover/popover.module';
 
 export * from './lib/repeater/repeater.module';
