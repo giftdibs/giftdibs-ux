@@ -32,6 +32,7 @@ import {
 })
 export class ConfirmComponent implements OnInit {
   public message: string;
+  public supplemental: string;
 
   public get animationState(): string {
     return (this.isOpen) ? 'open' : 'closed';
@@ -47,6 +48,7 @@ export class ConfirmComponent implements OnInit {
 
   public ngOnInit(): void {
     this.message = this.context.config.message;
+    this.supplemental = this.context.config.supplemental;
   }
 
   public confirm(): void {

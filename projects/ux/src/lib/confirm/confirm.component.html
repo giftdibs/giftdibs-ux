@@ -11,6 +11,12 @@
     {{ message }}
   </p>
 
+  <p *ngIf="supplemental"
+    class="gd-confirm-supplemental"
+  >
+  {{ supplemental }}
+  </p>
+
   <div class="gd-button-group">
     <button
       class="gd-button gd-button-primary"

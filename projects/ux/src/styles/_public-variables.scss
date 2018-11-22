@@ -17,7 +17,7 @@ $gd-font-weight-normal: 400 !default;
 $gd-font-weight-bold: 700 !default;
 $gd-font-weight-black: 900 !default;
 $gd-line-height: 1.5 !default;
-$gd-line-height-reduced: 1.1 !default;
+$gd-line-height-reduced: 1.2 !default;
 
 // COLORS
 
@@ -86,7 +86,7 @@ $gd-border-color-neutral-lightest: darken($gd-color-neutral-lightest, 5%) !defau
 
 // TEXT COLOR
 $gd-text-color-default: #000 !default;
-$gd-text-color-deemphasized: desaturate($gd-color-neutral, 5%) !default;
+$gd-text-color-deemphasized: desaturate(darken($gd-color-neutral, 8%), 5%) !default;
 $gd-text-color-dark: $gd-color-neutral-darkest !default;
 
 // BRANDS

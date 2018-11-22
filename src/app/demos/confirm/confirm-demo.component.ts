@@ -24,7 +24,8 @@ export class ConfirmDemoComponent implements OnInit {
 
   public openConfirm(): void {
     this.confirmService.confirm({
-      message: 'Are you sure?'
+      message: 'Are you sure?',
+      supplemental: 'This action cannot be undone!'
     }, (answer: ConfirmAnswer) => {
       console.log('answer:', answer);
     });
