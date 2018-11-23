@@ -7,10 +7,9 @@ $gd-thumbnail-default-size: 160px;
 }
 
 .gd-thumbnail {
-  display: inline-block;
+  display: block;
   color: $gd-color-neutral-lighter;
   font-weight: $gd-font-weight-light;
-  vertical-align: top;
   border-radius: $gd-border-radius-sm;
   overflow: hidden;
   font-size: $gd-font-size-default;
