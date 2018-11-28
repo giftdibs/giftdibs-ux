@@ -1,3 +1,7 @@
+# 1.0.0-alpha.22 (2018-11-28)
+
+- Added confirm type enum.
+
 # 1.0.0-alpha.21 (2018-11-22)
 
 - Added message stream to popover component.
