@@ -52,12 +52,12 @@ export class ConfirmComponent implements OnInit {
   }
 
   public confirm(): void {
-    this.answerType = 'okay';
+    this.answerType = ConfirmAnswerType.Okay;
     this.close();
   }
 
   public cancel(): void {
-    this.answerType = 'cancel';
+    this.answerType = ConfirmAnswerType.Cancel;
     this.close();
   }
 

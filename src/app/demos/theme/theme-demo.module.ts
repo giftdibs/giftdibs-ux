@@ -7,7 +7,8 @@ import {
 } from '@angular/common';
 
 import {
-  FormFieldModule
+  FormFieldModule,
+  IconModule
 } from 'projects/ux/src/public_api';
 
 import { ButtonsDemoComponent } from './buttons-demo.component';
@@ -23,6 +24,7 @@ import { ThemeDemoRoutingModule } from './theme-demo-routing.module';
   imports: [
     CommonModule,
     FormFieldModule,
+    IconModule,
     ThemeDemoRoutingModule
   ]
 })

@@ -1,1 +1,4 @@
-export type ConfirmAnswerType = 'okay' | 'cancel';
+export enum ConfirmAnswerType {
+  Okay = 'okay',
+  Cancel = 'cancel'
+}
