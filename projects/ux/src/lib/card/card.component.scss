@@ -2,14 +2,14 @@
 
 .gd-card-wrapper {
   padding: $gd-spacing;
-  border-radius: $gd-border-radius-sm;
+  border-radius: $gd-border-radius;
   border: 1px solid $gd-color-neutral-lightest;
   background-color: #fff;
 }
 
 .gd-card-anchor {
   display: block;
-  border-radius: $gd-border-radius-sm;
+  border-radius: $gd-border-radius;
   padding: 4px;
   margin: -4px;
 

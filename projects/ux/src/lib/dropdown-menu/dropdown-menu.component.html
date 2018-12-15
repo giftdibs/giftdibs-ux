@@ -8,7 +8,7 @@
 >
   <ng-template ngFor let-item [ngForOf]="items">
     <li class="gd-dropdown-menu-item">
-      <div *ngIf="item.action else routerTemplate"
+      <div *ngIf="item.action"
         role="button"
         class="gd-button gd-dropdown-menu-item-button"
         tabindex="0"
@@ -21,17 +21,30 @@
         >
         </ng-container>
       </div>
-      <ng-template #routerTemplate>
-        <a
-          class="gd-button gd-dropdown-menu-item-button"
-          [attr.title]="item.label"
-          [routerLink]="item.route"
-        >
-          <ng-container
-            *ngTemplateOutlet="itemTemplate; context: { item: item }">
-          </ng-container>
-        </a>
-      </ng-template>
+      <ng-container *ngIf="!item.action">
+        <ng-container *ngIf="item.route else urlTemplate">
+          <a
+            class="gd-button gd-dropdown-menu-item-button"
+            [attr.title]="item.label"
+            [routerLink]="item.route"
+          >
+            <ng-container
+              *ngTemplateOutlet="itemTemplate; context: { item: item }">
+            </ng-container>
+          </a>
+        </ng-container>
+        <ng-template #urlTemplate>
+          <a
+            class="gd-button gd-dropdown-menu-item-button"
+            [attr.title]="item.label"
+            [attr.href]="item.url"
+          >
+            <ng-container
+              *ngTemplateOutlet="itemTemplate; context: { item: item }">
+            </ng-container>
+          </a>
+        </ng-template>
+      </ng-container>
     </li>
     <li
       *ngIf="item.addSeparatorAfter"

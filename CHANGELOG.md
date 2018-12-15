@@ -1,3 +1,9 @@
+# 1.0.0-alpha.23 (2018-12-15)
+
+- Added Open Sans font.
+- Added `url` to dropdown menu item type.
+- Fixed typeahead component to not disable input.
+
 # 1.0.0-alpha.22 (2018-11-28)
 
 - Added confirm type enum.

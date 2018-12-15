@@ -154,14 +154,6 @@ export class TypeaheadComponent
         }
       });
 
-    // fromEvent(document, 'click')
-    //   .pipe(
-    //     takeUntil(this.ngUnsubscribe)
-    //   )
-    //   .subscribe(() => {
-    //     this.removeResults();
-    //   });
-
     // Update the value of the input.
     input.value = this._value || '';
   }
@@ -279,10 +271,6 @@ export class TypeaheadComponent
       this.hasResults = false;
       this.changeDetector.markForCheck();
     });
-
-    // this.overlayInstance.click.subscribe(() => {
-    //   this.overlayInstance.destroy();
-    // });
 
     this.positionResults();
     this.changeDetector.detectChanges();

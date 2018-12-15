@@ -36,7 +36,6 @@
     type="text"
     [attr.aria-describedby]="ariaDescribedBy"
     [attr.placeholder]="placeholder"
-    [disabled]="disabled"
     (focus)="searchInput.select()"
     (keyup.enter)="onButtonClick();$event.stopPropagation();"
     #searchInput

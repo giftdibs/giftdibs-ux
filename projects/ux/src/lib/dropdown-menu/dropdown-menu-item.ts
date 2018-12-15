@@ -5,4 +5,5 @@ export interface DropdownMenuItem {
   addSeparatorAfter?: boolean;
   data?: any;
   route?: string;
+  url?: string;
 }
