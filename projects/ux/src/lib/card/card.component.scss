@@ -3,8 +3,8 @@
 .gd-card-wrapper {
   padding: $gd-spacing;
   border-radius: $gd-border-radius;
-  border: 1px solid $gd-color-neutral-lightest;
   background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
 }
 
 .gd-card-anchor {

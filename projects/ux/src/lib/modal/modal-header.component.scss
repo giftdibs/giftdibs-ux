@@ -1,8 +1,9 @@
 @import '../../styles/mixins';
 
 .gd-modal-header {
-  padding: $gd-spacing-padding-squish;
+  padding: 20px $gd-spacing;
   border-bottom: 1px solid $gd-color-neutral-lightest;
+  text-align: center;
 }
 
 .gd-modal-header-button-close {

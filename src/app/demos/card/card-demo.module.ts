@@ -7,6 +7,7 @@ import {
   GridModule,
   IconModule,
   MediaModule,
+  RibbonModule,
   ThumbnailModule
 } from 'projects/ux/src/public_api';
 
@@ -21,6 +22,7 @@ import { CardDemoComponent } from './card-demo.component';
     GridModule,
     IconModule,
     MediaModule,
+    RibbonModule,
     ThumbnailModule
   ],
   declarations: [

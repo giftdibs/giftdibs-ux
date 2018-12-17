@@ -8,7 +8,7 @@ $gd-thumbnail-default-size: 160px;
 
 .gd-thumbnail {
   display: block;
-  color: $gd-color-neutral-lighter;
+  color: #fff;
   font-weight: $gd-font-weight-light;
   border-radius: $gd-border-radius;
   overflow: hidden;
@@ -40,7 +40,7 @@ $gd-thumbnail-default-size: 160px;
   display: flex;
   height: 100%;
   width: 100%;
-  color: $gd-color-neutral-lighter;
+  color: #fff;
 }
 
 .gd-thumbnail-image {
@@ -51,7 +51,8 @@ $gd-thumbnail-default-size: 160px;
 
 .gd-thumbnail-empty {
   .gd-thumbnail-image-container {
-    background-color: $gd-color-neutral-lightest;
+    background: $gd-color-primary;
+    background: linear-gradient(135deg, $gd-color-primary 0%, $gd-color-info 100%);
   }
 }
 

@@ -1,10 +1,12 @@
 @import '../../styles/mixins';
 
 .gd-card-header {
-  font-weight: $gd-font-weight-normal;
   margin-left: -$gd-spacing;
   margin-right: -$gd-spacing;
-  padding-left: $gd-spacing;
-  padding-right: $gd-spacing;
-  padding-bottom: $gd-spacing;
+  margin-bottom: -$gd-spacing;
+  margin-top: $gd-spacing-md;
+
+  background: $gd-color-neutral-faint;
+  padding: $gd-spacing-md $gd-spacing $gd-spacing;
+  border-radius: 0 0 13px 13px;
 }

@@ -2,7 +2,8 @@
 
 .gd-modal {
   background-color: #fff;
-  border-radius: $gd-border-radius;
+  border-radius: $gd-border-radius-sm;
+  box-shadow: $gd-box-shadow-lg;
   display: flex;
   flex-direction: column;
   overflow: hidden;

@@ -13,7 +13,7 @@ body {
   color: $gd-text-color-default;
   line-height: $gd-line-height;
   font-weight: $gd-font-weight-normal;
-  background-color: #fafafa;
+  background-color: $gd-color-neutral-lightest;
 }
 
 a {
@@ -31,9 +31,10 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: $gd-font-family-serif;
   line-height: $gd-line-height-reduced;
   margin-bottom: $gd-spacing;
-  font-weight: $gd-font-weight-black;
+  font-weight: $gd-font-weight-normal;
   word-break: break-word;
 }
 

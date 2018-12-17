@@ -12,5 +12,11 @@
 .gd-media-xs {
   line-height: $gd-line-height-reduced;
   font-size: 90%;
+
+  ::ng-deep {
+    .gd-media-heading {
+      margin-bottom: -3px;
+    }
+  }
 }
 
