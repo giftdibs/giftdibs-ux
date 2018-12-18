@@ -3,9 +3,18 @@
 .app-priority {
   color: $gd-color-neutral-lightest;
   font-size: 12px;
+  margin-top: 5px;
+}
+
+.app-item {
+  margin-bottom: $gd-spacing * 2;
+
   ::ng-deep {
-    .gd-icon {
-      margin-left: -1px;
+    .gd-card-body {
+      .gd-thumbnail {
+        margin: 0 auto;
+        margin-top: 5px;
+      }
     }
   }
 }

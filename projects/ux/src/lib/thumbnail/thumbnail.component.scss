@@ -8,7 +8,7 @@ $gd-thumbnail-default-size: 160px;
 
 .gd-thumbnail {
   display: block;
-  color: #fff;
+  color: $gd-color-neutral-lighter;
   font-weight: $gd-font-weight-light;
   border-radius: $gd-border-radius;
   overflow: hidden;
@@ -40,7 +40,7 @@ $gd-thumbnail-default-size: 160px;
   display: flex;
   height: 100%;
   width: 100%;
-  color: #fff;
+  color: $gd-color-neutral-lighter;
 }
 
 .gd-thumbnail-image {
@@ -51,8 +51,7 @@ $gd-thumbnail-default-size: 160px;
 
 .gd-thumbnail-empty {
   .gd-thumbnail-image-container {
-    background: $gd-color-primary;
-    background: linear-gradient(135deg, $gd-color-primary 0%, $gd-color-info 100%);
+    background-color: $gd-color-neutral-lightest;
   }
 }
 
@@ -70,8 +69,8 @@ $gd-thumbnail-default-size: 160px;
 }
 
 .gd-thumbnail-xs {
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
 }
 
 .gd-thumbnail-sm {

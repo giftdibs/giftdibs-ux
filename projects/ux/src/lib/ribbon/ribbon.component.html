@@ -2,5 +2,7 @@
   class="gd-ribbon"
   [ngClass]="'gd-ribbon-' + ribbonType"
 >
-  <ng-content></ng-content>
+  <div class="gd-ribbon-content">
+    <ng-content></ng-content>
+  </div>
 </div>

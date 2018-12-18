@@ -2,4 +2,11 @@
 
 .gd-card-body {
   font-weight: $gd-font-weight-normal;
+  font-family: $gd-font-family-serif;
+  text-align: center;
+  padding-bottom: $gd-spacing;
+
+  ::ng-deep .gd-media-xs {
+    line-height: 1.4;
+  }
 }

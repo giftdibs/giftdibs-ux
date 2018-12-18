@@ -35,7 +35,7 @@ $gd-line-height-reduced: 1.2 !default;
 }
 
 // PRIMARY
-$gd-color-primary: #4da35e !default;
+$gd-color-primary: #13a0a9 !default;
 $gd-background-color-primary: background_color($gd-color-primary) !default;
 $gd-border-color-primary: border_color($gd-color-primary) !default;
 $gd-text-color-primary: text_color($gd-color-primary) !default;
@@ -47,13 +47,13 @@ $gd-border-color-secondary: border_color($gd-color-secondary) !default;
 $gd-text-color-secondary: text_color($gd-color-secondary) !default;
 
 // INFO
-$gd-color-info: #13a0a9 !default;
+$gd-color-info: $gd-color-primary !default;
 $gd-background-color-info: background_color($gd-color-info) !default;
 $gd-border-color-info: border_color($gd-color-info) !default;
 $gd-text-color-info: text_color($gd-color-info) !default;
 
 // SUCCESS
-$gd-color-success: $gd-color-primary !default;
+$gd-color-success: #4da35e !default;
 $gd-background-color-success: background_color($gd-color-success) !default;
 $gd-border-color-success: border_color($gd-color-success) !default;
 $gd-text-color-success: text_color($gd-color-success) !default;
@@ -71,7 +71,7 @@ $gd-border-color-danger: $gd-color-danger !default;
 $gd-text-color-danger: $gd-color-danger !default;
 
 // NEUTRAL
-$gd-color-neutral: desaturate(lighten($gd-color-primary, 5%), 65%) !default;
+$gd-color-neutral: #7f7f7f !default;
 $gd-color-neutral-light: lighten($gd-color-neutral, 15%) !default;
 $gd-color-neutral-lighter: lighten($gd-color-neutral, 30%) !default;
 $gd-color-neutral-lightest: lighten($gd-color-neutral, 40%) !default;
@@ -87,7 +87,7 @@ $gd-border-color-neutral-lightest: darken($gd-color-neutral-lightest, 5%) !defau
 
 // TEXT COLOR
 $gd-text-color-default: $gd-color-neutral-dark !default;
-$gd-text-color-deemphasized: desaturate(darken($gd-color-neutral, 8%), 5%) !default;
+$gd-text-color-deemphasized: #888 !default;
 $gd-text-color-dark: $gd-color-neutral-darkest !default;
 
 // BRANDS

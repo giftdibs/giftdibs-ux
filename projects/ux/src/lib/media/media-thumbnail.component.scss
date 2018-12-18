@@ -14,8 +14,8 @@
 }
 
 .gd-media-thumbnail-xs {
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
 }
 
 .gd-media-thumbnail-sm {
@@ -41,7 +41,7 @@
     gd-media-controls + gd-media-thumbnail,
     gd-media-content + gd-media-thumbnail {
       .gd-media-thumbnail {
-        margin-right: 0;
+        margin-right: 0 !important;
         margin-left: $gd-spacing;
       }
     }

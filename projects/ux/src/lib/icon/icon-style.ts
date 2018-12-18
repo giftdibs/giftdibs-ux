@@ -1,1 +1,1 @@
-export type IconStyle = 'default' | 'success' | 'deemphasized';
+export type IconStyle = 'default' | 'success' | 'info' | 'deemphasized';

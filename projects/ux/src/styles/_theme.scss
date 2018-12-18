@@ -13,12 +13,12 @@ body {
   color: $gd-text-color-default;
   line-height: $gd-line-height;
   font-weight: $gd-font-weight-normal;
-  background-color: $gd-color-neutral-lightest;
+  background-color: #fafafa;
 }
 
 a {
-  font-weight: $gd-font-weight-bold;
   color: $gd-text-color-default;
+  font-weight: $gd-font-weight-bold;
   text-decoration: none;
 
   &:hover {
@@ -89,18 +89,15 @@ strong {
   }
 }
 
+.gd-text-price {
+}
+
 .gd-text-strikethrough {
   text-decoration: line-through;
 }
 
 .gd-text-small {
   font-size: $gd-font-size-small;
-}
-
-.gd-text-price {
-  color: $gd-color-neutral-dark;
-  font-weight: $gd-font-weight-normal;
-  font-size: $gd-font-size-large;
 }
 
 .gd-rounded-corners {

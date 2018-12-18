@@ -1,6 +1,6 @@
 @import 'public-variables';
 
-$gd-font-size-default: 13px !default;
+$gd-font-size-default: 100% !default;
 $gd-font-size-small: 90% !default;
 $gd-font-size-smaller: 75% !default;
 $gd-font-size-large: 1.2em !default;
@@ -14,11 +14,11 @@ $gd-box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
 $gd-box-shadow-lg: 0 5px 150px rgba(0,0,0,0.45);
 $gd-box-shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.15);
 
-$gd-border-radius: 12px !default;
+$gd-border-radius: 6px !default;
 $gd-border-radius-sm: 3px !default;
 
 $gd-spacing-padding-squish: $gd-spacing-md $gd-spacing !default;
-$gd-spacing-padding-squish-compact: 10px 20px !default;
+$gd-spacing-padding-squish-compact: $gd-spacing-sm $gd-spacing-md !default;
 $gd-spacing-padding-squish-large: $gd-spacing $gd-spacing-xl !default;
 $gd-spacing-padding-even: $gd-spacing !default;
 $gd-spacing-padding-even-large: $gd-spacing-xl !default;

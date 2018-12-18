@@ -4,14 +4,15 @@
   padding: $gd-spacing;
   border-radius: $gd-border-radius;
   background-color: #fff;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
 }
 
 .gd-card-anchor {
   display: block;
   border-radius: $gd-border-radius;
-  padding: 4px;
-  margin: -4px;
+  padding: 8px;
+  margin: -8px;
+  color: $gd-text-color-default;
 
   &:hover {
     text-decoration: none;
