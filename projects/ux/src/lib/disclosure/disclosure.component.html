@@ -1,6 +1,9 @@
 <div class="gd-disclosure">
   <div class="gd-disclosure-header">
-    <div class="gd-disclosure-heading-wrapper">
+    <div
+      class="gd-disclosure-heading-wrapper"
+      (click)="toggleOpen()"
+    >
       <ng-content select="gd-disclosure-heading"></ng-content>
     </div>
     <button

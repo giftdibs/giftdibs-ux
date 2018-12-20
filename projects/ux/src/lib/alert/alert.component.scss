@@ -9,41 +9,53 @@
 }
 
 .gd-alert {
-  max-width: 85%;
+  max-width: 330px;
   position: fixed;
   bottom: $gd-spacing;
   left: $gd-spacing;
-  padding: $gd-spacing-padding-squish;
-  color: #fff;
-  background-color: $gd-text-color-default;
-  box-shadow: $gd-box-shadow;
+  display: flex;
+  align-items: stretch;
+  z-index: $gd-zindex-alert;
   border-radius: $gd-border-radius-sm;
-  border: 1px solid transparent;
-  border-left: 0;
+  background-color: #fff;
+  box-shadow: $gd-box-shadow-lg;
+}
+
+.gd-alert-indicator {
+  padding: $gd-spacing-padding-squish;
   display: flex;
   align-items: center;
-  z-index: $gd-zindex-alert;
+  color: #fff;
 }
 
 .gd-alert-message {
   flex: 1 1 auto;
-  padding-right: $gd-spacing;
+  padding: $gd-spacing-padding-squish;
 }
 
-.gd-alert-info {
-  background-color: $gd-color-info;
-}
-
-.gd-alert-danger {
-  background-color: $gd-color-danger;
-}
-
-.gd-alert-success {
-  background-color: $gd-color-success;
+.gd-alert-controls {
+  padding: $gd-spacing-sm;
 }
 
 .gd-alert-button {
+  color: $gd-text-color-default;
   background-color: transparent;
-  color: #fff;
-  padding: 0;
+}
+
+.gd-alert-info {
+  .gd-alert-indicator {
+    background-color: $gd-color-info;
+  }
+}
+
+.gd-alert-danger {
+  .gd-alert-indicator {
+    background-color: $gd-color-danger;
+  }
+}
+
+.gd-alert-success {
+  .gd-alert-indicator {
+    background-color: $gd-color-success;
+  }
 }

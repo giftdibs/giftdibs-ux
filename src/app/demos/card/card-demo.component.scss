@@ -2,19 +2,19 @@
 
 .app-priority {
   color: $gd-color-neutral-lightest;
-  font-size: 12px;
-  margin-top: 5px;
+  font-size: 14px;
 }
 
 .app-item {
   margin-bottom: $gd-spacing * 2;
-
   ::ng-deep {
-    .gd-card-body {
-      .gd-thumbnail {
-        margin: 0 auto;
-        margin-top: 5px;
-      }
+    .gd-card-wrapper {
+      overflow: hidden;
+      position: relative;
     }
   }
+}
+
+.app-item-user {
+  margin-top: 16px;
 }
