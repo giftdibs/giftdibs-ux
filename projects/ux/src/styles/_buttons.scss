@@ -131,14 +131,10 @@
 }
 
 .gd-button-tab-selected {
-  background-color: $gd-color-neutral-lightest;
+  background-color: $gd-color-neutral-lighter;
   color: $gd-text-color-dark;
 }
 
 .gd-button-group-tabs {
   margin-bottom: $gd-spacing;
-
-  // @media (min-width: $gd-screen-sm-min) {
-  //   margin-left: -$gd-spacing-lg; // Offset button padding.
-  // }
 }
