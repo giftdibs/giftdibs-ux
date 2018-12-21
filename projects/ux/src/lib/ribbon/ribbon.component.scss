@@ -23,12 +23,13 @@
 }
 
 .gd-ribbon-info {
-  background-color: $gd-color-info;
+  background: $gd-color-secondary;
+  background: linear-gradient(45deg, $gd-color-primary 0%, $gd-color-secondary 100%);
 }
 
 .gd-ribbon-success {
-  background: $gd-color-secondary;
-  background: linear-gradient(45deg, $gd-color-primary 0%, $gd-color-secondary 100%);
+  background-color: $gd-color-info;
+  background: linear-gradient(45deg, $gd-color-info 0%, $gd-color-success 100%);
 }
 
 .gd-ribbon-danger {

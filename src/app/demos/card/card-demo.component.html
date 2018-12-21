@@ -45,9 +45,19 @@
         }"
       >
         <gd-ribbon *ngIf="item.isDibbed"
-          ribbonType="success"
+          ribbonType="info"
         >
           <gd-icon icon="hand-paper"></gd-icon>
+        </gd-ribbon>
+        <gd-ribbon *ngIf="item.isDelivered"
+          ribbonType="success"
+        >
+          <gd-icon icon="box"></gd-icon>
+        </gd-ribbon>
+        <gd-ribbon *ngIf="item.isReceived"
+          ribbonType="success"
+        >
+          <gd-icon icon="box-open"></gd-icon>
         </gd-ribbon>
         <gd-card-thumbnail>
           <gd-thumbnail

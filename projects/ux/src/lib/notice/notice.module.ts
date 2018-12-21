@@ -6,12 +6,15 @@ import {
   CommonModule
 } from '@angular/common';
 
+import { IconModule } from '../icon/icon.module';
+
 import { NoticeHeadingComponent } from './notice-heading.component';
 import { NoticeComponent } from './notice.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    IconModule
   ],
   exports: [
     NoticeComponent,

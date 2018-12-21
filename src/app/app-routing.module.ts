@@ -57,6 +57,10 @@ const appRoutes: Routes = [
     loadChildren: 'src/app/demos/popover/popover-demo.module#PopoverDemoModule'
   },
   {
+    path: 'demos/notice',
+    loadChildren: 'src/app/demos/notice/notice-demo.module#NoticeDemoModule'
+  },
+  {
     path: 'demos/thumbnail',
     loadChildren: 'src/app/demos/thumbnail/thumbnail-demo.module#ThumbnailDemoModule'
   },

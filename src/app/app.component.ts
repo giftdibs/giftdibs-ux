@@ -68,6 +68,10 @@ export class AppComponent {
     {
       path: '/demos/media-query',
       label: 'Media Query'
+    },
+    {
+      path: '/demos/notice',
+      label: 'Notice'
     }
   ].sort(function (a: any, b: any): any {
     const keyA = a.label;

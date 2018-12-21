@@ -19,11 +19,13 @@ export class CardDemoComponent implements OnInit {
     {
       imageUrl: 'https://giftdibs.s3.amazonaws.com/5bd26b69be29a6f2123a5ec5-1hWOuDEsvLSe3evDB78geJHAVUSmGkxV',
       name: 'Gaming chair',
-      price: 300
+      price: 300,
+      isDelivered: true
     },
     {
       name: 'Evening gown',
-      price: 120
+      price: 120,
+      isReceived: true
     },
     {
       imageUrl: 'https://giftdibs.s3.amazonaws.com/5bd26b69be29a6f2123a5ec5-05Scp7MbQUmpQaw8EkEvhxhFpIBZfeoC',

@@ -1,35 +1,57 @@
 @import '../../styles/variables';
 
 .gd-notice {
-  padding: $gd-spacing-padding-squish;
   color: $gd-text-color-default;
-  background-color: #fff;
   margin: $gd-spacing 0;
-  font-weight: $gd-font-weight-normal;
-  border: 1px solid transparent;
   border-radius: $gd-border-radius;
+  display: flex;
 
   ::ng-deep p {
     margin: $gd-spacing-sm 0;
   }
 }
 
-.gd-notice-danger {
-  background-color: $gd-background-color-danger;
-  color: $gd-text-color-danger;
+.gd-notice-indicator {
+  padding: $gd-spacing-padding-squish;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  border-radius: $gd-border-radius 0 0 $gd-border-radius;
 }
 
-.gd-notice-warning {
-  background-color: $gd-background-color-warning;
-  color: $gd-text-color-warning;
-}
-
-.gd-notice-success {
-  background-color: $gd-background-color-success;
-  color: $gd-text-color-success;
+.gd-notice-content {
+  flex: 1 1 auto;
+  padding: $gd-spacing-padding-squish;
 }
 
 .gd-notice-info {
   background-color: $gd-background-color-info;
-  color: $gd-text-color-info;
+
+  .gd-notice-indicator {
+    background-color: $gd-color-info;
+  }
+}
+
+.gd-notice-danger {
+  background-color: $gd-background-color-danger;
+
+  .gd-notice-indicator {
+    background-color: $gd-color-danger;
+  }
+}
+
+.gd-notice-warning {
+  background-color: $gd-background-color-warning;
+
+  .gd-notice-indicator {
+    background-color: $gd-color-warning;
+  }
+}
+
+.gd-notice-success {
+  background-color: $gd-background-color-success;
+
+  .gd-notice-indicator {
+    background-color: $gd-color-success;
+  }
 }
