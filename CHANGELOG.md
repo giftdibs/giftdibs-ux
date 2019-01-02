@@ -1,3 +1,7 @@
+# 1.0.0-alpha.24 (2019-01-02)
+
+- Various style changes.
+
 # 1.0.0-alpha.23 (2018-12-15)
 
 - Added Open Sans font.
