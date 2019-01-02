@@ -14,9 +14,9 @@
   bottom: $gd-spacing;
   left: $gd-spacing;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   z-index: $gd-zindex-alert;
-  border-radius: $gd-border-radius-sm;
+  border-radius: $gd-border-radius;
   background-color: #fff;
   box-shadow: $gd-box-shadow-lg;
 }
@@ -25,6 +25,7 @@
   padding: $gd-spacing-padding-squish;
   display: flex;
   align-items: center;
+  align-self: stretch;
   color: #fff;
   border-radius: $gd-border-radius 0 0 $gd-border-radius;
 }

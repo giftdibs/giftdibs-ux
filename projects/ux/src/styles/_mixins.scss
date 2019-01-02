@@ -16,6 +16,7 @@
   font-weight: $gd-font-weight-normal;
   padding: $gd-spacing-padding-squish-compact;
   color: $gd-text-color-dark;
+  margin: 0;
 }
 
 @mixin gd_disabled() {

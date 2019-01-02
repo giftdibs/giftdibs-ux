@@ -9,6 +9,11 @@
     <gd-icon *ngIf="noticeType === 'danger'" icon="exclamation-triangle"></gd-icon>
   </div>
   <div class="gd-notice-content">
-    <ng-content></ng-content>
+    <div class="gd-notice-heading" role="heading">
+      <ng-content select="gd-notice-heading"></ng-content>
+    </div>
+    <div class="gd-notice-body">
+      <ng-content></ng-content>
+    </div>
   </div>
 </div>

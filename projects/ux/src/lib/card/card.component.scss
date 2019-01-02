@@ -4,7 +4,8 @@
   padding: $gd-spacing;
   border-radius: $gd-border-radius;
   background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: $gd-box-shadow;
+  overflow: hidden;
 }
 
 .gd-card-anchor {

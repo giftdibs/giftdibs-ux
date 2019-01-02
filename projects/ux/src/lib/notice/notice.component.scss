@@ -1,14 +1,25 @@
 @import '../../styles/variables';
 
 .gd-notice {
-  color: $gd-text-color-default;
   margin: $gd-spacing 0;
-  border-radius: $gd-border-radius;
+  border-radius: $gd-border-radius-sm;
   display: flex;
+  background-color: #fff;
+  box-shadow: $gd-box-shadow;
+  border: 1px solid transparent;
+  overflow: hidden;
 
-  ::ng-deep p {
-    margin: $gd-spacing-sm 0;
+  ::ng-deep {
+    p {
+      margin: $gd-spacing-sm 0;
+    }
   }
+}
+
+.gd-notice-heading {
+  font-weight: bold;
+  font-family: $gd-font-family-serif;
+  font-size: 1.1em;
 }
 
 .gd-notice-indicator {
@@ -16,41 +27,37 @@
   display: flex;
   align-items: center;
   color: #fff;
-  border-radius: $gd-border-radius 0 0 $gd-border-radius;
+  font-size: 1.4em;
 }
 
 .gd-notice-content {
   flex: 1 1 auto;
-  padding: $gd-spacing-padding-squish;
+  padding: $gd-spacing;
 }
 
 .gd-notice-info {
-  background-color: $gd-background-color-info;
-
+  border-color: $gd-color-info;
   .gd-notice-indicator {
     background-color: $gd-color-info;
   }
 }
 
 .gd-notice-danger {
-  background-color: $gd-background-color-danger;
-
+  border-color: $gd-color-danger;
   .gd-notice-indicator {
     background-color: $gd-color-danger;
   }
 }
 
 .gd-notice-warning {
-  background-color: $gd-background-color-warning;
-
+  border-color: $gd-color-warning;
   .gd-notice-indicator {
     background-color: $gd-color-warning;
   }
 }
 
 .gd-notice-success {
-  background-color: $gd-background-color-success;
-
+  border-color: $gd-color-success;
   .gd-notice-indicator {
     background-color: $gd-color-success;
   }

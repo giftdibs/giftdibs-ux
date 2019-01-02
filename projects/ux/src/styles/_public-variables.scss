@@ -31,37 +31,37 @@ $gd-line-height-reduced: 1.2 !default;
 }
 
 // PRIMARY
-$gd-color-primary: #2f3b56 !default;
+$gd-color-primary: #272A45 !default;
 $gd-background-color-primary: desaturate(lighten($gd-color-primary, 45%), 15%) !default;
 $gd-border-color-primary: border_color($gd-color-primary) !default;
 $gd-text-color-primary: text_color($gd-color-primary) !default;
 
 // SECONDARY
-$gd-color-secondary: #a9139d !default;
+$gd-color-secondary: #A9139D !default;
 $gd-background-color-secondary: desaturate(lighten($gd-color-secondary, 45%), 15%) !default;
 $gd-border-color-secondary: border_color($gd-color-secondary) !default;
 $gd-text-color-secondary: text_color($gd-color-secondary) !default;
 
 // INFO
-$gd-color-info: $gd-color-primary !default;
-$gd-background-color-info: desaturate(lighten($gd-color-info, 65%), 25%) !default;
+$gd-color-info: #272A45 !default;
+$gd-background-color-info: desaturate(lighten($gd-color-info, 45%), 25%) !default;
 $gd-border-color-info: border_color($gd-color-info) !default;
 $gd-text-color-info: text_color($gd-color-info) !default;
 
 // SUCCESS
-$gd-color-success: #00a685 !default;
+$gd-color-success: #78905e !default;
 $gd-background-color-success: desaturate(lighten($gd-color-success, 55%), 65%) !default;
 $gd-border-color-success: border_color($gd-color-success) !default;
 $gd-text-color-success: text_color($gd-color-success) !default;
 
 // WARNING
-$gd-color-warning: $gd-color-secondary !default;
+$gd-color-warning: #A9139D !default;
 $gd-background-color-warning: desaturate(lighten($gd-color-warning, 55%), 45%) !default;
 $gd-border-color-warning: border_color($gd-color-warning) !default;
 $gd-text-color-warning: text_color($gd-color-warning) !default;
 
 // DANGER
-$gd-color-danger: #b70035 !default;
+$gd-color-danger: rgb(186, 63, 86) !default;
 $gd-background-color-danger: desaturate(lighten($gd-color-danger, 55%), 55%) !default;
 $gd-border-color-danger: $gd-color-danger !default;
 $gd-text-color-danger: $gd-color-danger !default;
@@ -71,7 +71,7 @@ $gd-color-neutral: #7f7f7f !default;
 $gd-color-neutral-light: lighten($gd-color-neutral, 15%) !default;
 $gd-color-neutral-lighter: lighten($gd-color-neutral, 30%) !default;
 $gd-color-neutral-lightest: lighten($gd-color-neutral, 40%) !default;
-$gd-color-neutral-faint: lighten($gd-color-neutral, 45%) !default;
+$gd-color-neutral-faint: #f0efec !default;
 $gd-color-neutral-dark: darken($gd-color-neutral, 20%) !default;
 $gd-color-neutral-darker: darken($gd-color-neutral, 30%) !default;
 $gd-color-neutral-darkest: #000 !default;

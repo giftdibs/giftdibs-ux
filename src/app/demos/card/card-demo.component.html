@@ -45,17 +45,19 @@
         }"
       >
         <gd-ribbon *ngIf="item.isDibbed"
-          ribbonType="info"
+          ribbonType="secondary"
         >
-          <gd-icon icon="hand-paper"></gd-icon>
+          <gd-icon icon="check"></gd-icon>
         </gd-ribbon>
+
         <gd-ribbon *ngIf="item.isDelivered"
-          ribbonType="success"
+          ribbonType="primary"
         >
           <gd-icon icon="box"></gd-icon>
         </gd-ribbon>
+
         <gd-ribbon *ngIf="item.isReceived"
-          ribbonType="success"
+          ribbonType="primary"
         >
           <gd-icon icon="box-open"></gd-icon>
         </gd-ribbon>

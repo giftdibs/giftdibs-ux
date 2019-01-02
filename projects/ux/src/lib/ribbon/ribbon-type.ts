@@ -1,3 +1,4 @@
 export enum RibbonType {
-  Info = 'info'
+  Primary = 'primary',
+  Secondary = 'secondary'
 }

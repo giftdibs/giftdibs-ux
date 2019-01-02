@@ -1,5 +1,13 @@
 @import '../../styles/mixins';
 
+.gd-icon-primary {
+  color: $gd-color-primary;
+}
+
+.gd-icon-secondary {
+  color: $gd-color-secondary;
+}
+
 .gd-icon-success {
   color: $gd-color-success;
 }
@@ -9,5 +17,5 @@
 }
 
 .gd-icon-deemphasized {
-  color: $gd-color-neutral-lightest;
+  color: $gd-color-neutral-light;
 }

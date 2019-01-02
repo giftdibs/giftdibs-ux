@@ -14,5 +14,5 @@ import { RibbonType } from './ribbon-type';
 })
 export class RibbonComponent {
   @Input()
-  public ribbonType: RibbonType = RibbonType.Info;
+  public ribbonType: RibbonType = RibbonType.Primary;
 }

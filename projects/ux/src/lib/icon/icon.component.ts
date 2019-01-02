@@ -27,7 +27,7 @@ export class IconComponent implements OnInit {
   }
 
   public get iconStyle(): IconStyle {
-    return this._iconStyle || 'default';
+    return this._iconStyle || IconStyle.Default;
   }
 
   @Input()
