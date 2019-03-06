@@ -1,3 +1,7 @@
+# 1.0.0-rc.0 (2019-03-04)
+
+- Upgraded dependencies. Initial release candidate.
+
 # 1.0.0-alpha.24 (2019-01-02)
 
 - Various style changes.
