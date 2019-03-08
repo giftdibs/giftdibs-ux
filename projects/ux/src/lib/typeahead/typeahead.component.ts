@@ -210,30 +210,36 @@ export class TypeaheadComponent
         finalize(() => {
           this.isLoading = false;
           this.disabled = false;
+          this.changeDetector.markForCheck();
         }),
         takeUntil(this.ngUnsubscribe)
       )
-      .subscribe((results: any[]) => {
-        if (!results || results.length === 0) {
-          // No need to refresh the results if unchanged.
-          if (
-            this.overlayInstance &&
-            this.overlayInstance.componentInstance.results.length === 0
-          ) {
-            if (this.hasResults) {
-              return;
+      .subscribe(
+        (results: any[]) => {
+          if (!results || results.length === 0) {
+            // No need to refresh the results if unchanged.
+            if (
+              this.overlayInstance &&
+              this.overlayInstance.componentInstance.results.length === 0
+            ) {
+              if (this.hasResults) {
+                return;
+              }
             }
           }
-        }
 
-        if (this.hasResults) {
-          this.overlayInstance.componentInstance.results = results;
-          this.positionResults();
-          return;
-        }
+          if (this.hasResults) {
+            this.overlayInstance.componentInstance.results = results;
+            this.positionResults();
+            return;
+          }
 
-        this.showResults(results);
-      });
+          this.showResults(results);
+        },
+        () => {
+          // Swallow error for now.
+        }
+      );
   }
 
   private showResults(results: any[]): void {

@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 
 import {
-  of, Subject
+  Subject
 } from 'rxjs';
 
 import {
