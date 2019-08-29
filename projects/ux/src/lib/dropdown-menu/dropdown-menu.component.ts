@@ -55,7 +55,7 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
   public isVisible = false;
   public items: any[];
 
-  @ViewChild('defaultItemTemplate')
+  @ViewChild('defaultItemTemplate', { static: true })
   private defaultItemTemplate: TemplateRef<any>;
 
   private get activeIndex(): number {
@@ -81,7 +81,7 @@ export class DropdownMenuComponent implements OnInit, AfterContentInit, OnDestro
   private _closed = new Subject<void>();
   private _itemTemplate: TemplateRef<any>;
 
-  @ViewChild('menuElementRef')
+  @ViewChild('menuElementRef', { static: true })
   private menuElementRef: ElementRef;
 
   constructor(

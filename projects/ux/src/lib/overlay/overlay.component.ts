@@ -44,7 +44,7 @@ export class OverlayComponent implements OnInit, OnDestroy {
   public allowClickThrough = false;
   public showBackdrop = false;
 
-  @ViewChild('target', { read: ViewContainerRef })
+  @ViewChild('target', { read: ViewContainerRef, static: true })
   private targetRef: ViewContainerRef;
 
   private destroyOnOverlayClick = true;

@@ -23,7 +23,7 @@ import { TypeaheadResultsSelectionChange } from './typeahead-results-selection-c
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TypeaheadResultsComponent implements OnInit, OnDestroy {
-  @ViewChild('resultsElementRef', { read: ElementRef })
+  @ViewChild('resultsElementRef', { read: ElementRef, static: true })
   public resultsElementRef: ElementRef<any>;
 
   public searchResultsEmptyMessage: string;

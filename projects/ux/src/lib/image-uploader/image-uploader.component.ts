@@ -59,7 +59,7 @@ export class ImageUploaderComponent implements OnDestroy, ControlValueAccessor {
   @Output()
   public urlButtonClick = new EventEmitter<void>();
 
-  @ViewChild('fileInput')
+  @ViewChild('fileInput', { static: true })
   public fileInput: ElementRef;
 
   private _value: string;

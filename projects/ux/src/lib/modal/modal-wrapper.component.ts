@@ -53,7 +53,7 @@ export class ModalWrapperComponent implements OnDestroy {
     this._size = value;
   }
 
-  @ViewChild('target', { read: ViewContainerRef })
+  @ViewChild('target', { read: ViewContainerRef, static: true })
   private targetRef: ViewContainerRef;
 
   private isOpen = false;

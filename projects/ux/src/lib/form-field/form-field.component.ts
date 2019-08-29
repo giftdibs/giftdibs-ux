@@ -23,7 +23,7 @@ export class FormFieldComponent implements AfterContentInit, OnChanges {
   @Input()
   public errors: any[];
 
-  @ContentChild(FormControlName)
+  @ContentChild(FormControlName, { static: false })
   public controlName: FormControlName;
 
   public errorMessages: string[] = [];

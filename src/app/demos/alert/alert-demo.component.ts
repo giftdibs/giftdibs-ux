@@ -27,7 +27,7 @@ export class AlertDemoComponent implements OnInit {
 
   public ngOnInit(): void {}
 
-  public openAlert(type: AlertType): void {
+  public openAlert(type: string): void {
     switch (type) {
       case 'success':
       this.alertService.success(this.message, true);

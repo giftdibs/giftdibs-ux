@@ -27,7 +27,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OverlayHostComponent implements OnDestroy {
-  @ViewChild('target', { read: ViewContainerRef })
+  @ViewChild('target', { read: ViewContainerRef, static: true })
   private targetRef: ViewContainerRef;
 
   private ngUnsubscribe = new Subject<void>();

@@ -52,10 +52,10 @@ export class PopoverComponent implements OnDestroy {
 
   public isVisible = false;
 
-  @ViewChild('popover', { read: ElementRef })
+  @ViewChild('popover', { read: ElementRef, static: true })
   private popoverRef: ElementRef;
 
-  @ViewChild('target', { read: ViewContainerRef })
+  @ViewChild('target', { read: ViewContainerRef, static: true })
   private targetRef: ViewContainerRef;
 
   private config: PopoverConfig;
