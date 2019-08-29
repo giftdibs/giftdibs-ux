@@ -19,6 +19,7 @@ let nextId = 0;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TabsComponent implements AfterContentInit {
+
   @Input()
   public ariaLabel: string;
 

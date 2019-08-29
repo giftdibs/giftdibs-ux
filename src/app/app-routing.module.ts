@@ -71,6 +71,10 @@ const appRoutes: Routes = [
   {
     path: 'demos/wait',
     loadChildren: 'src/app/demos/wait/wait-demo.module#WaitDemoModule'
+  },
+  {
+    path: 'demos/tabs',
+    loadChildren: 'src/app/demos/tabs/tabs-demo.module#TabsDemoModule'
   }
 ];
 
