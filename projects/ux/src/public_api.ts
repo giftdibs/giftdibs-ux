@@ -94,6 +94,7 @@ export * from './lib/ribbon/ribbon-type';
 export * from './lib/ribbon/ribbon.module';
 
 // do not export tabs yet
+export * from './lib/tabs/tabs.module';
 
 export * from './lib/thumbnail/thumbnail-shape';
 export * from './lib/thumbnail/thumbnail-size';
