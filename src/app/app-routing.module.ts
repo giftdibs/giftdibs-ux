@@ -10,71 +10,71 @@ import {
 const appRoutes: Routes = [
   {
     path: 'demos/alert',
-    loadChildren: 'src/app/demos/alert/alert-demo.module#AlertDemoModule'
+    loadChildren: () => import('src/app/demos/alert/alert-demo.module').then(m => m.AlertDemoModule)
   },
   {
     path: 'demos/theme',
-    loadChildren: 'src/app/demos/theme/theme-demo.module#ThemeDemoModule'
+    loadChildren: () => import('src/app/demos/theme/theme-demo.module').then(m => m.ThemeDemoModule)
   },
   {
     path: 'demos/card',
-    loadChildren: 'src/app/demos/card/card-demo.module#CardDemoModule'
+    loadChildren: () => import('src/app/demos/card/card-demo.module').then(m => m.CardDemoModule)
   },
   {
     path: 'demos/confirm',
-    loadChildren: 'src/app/demos/confirm/confirm-demo.module#ConfirmDemoModule'
+    loadChildren: () => import('src/app/demos/confirm/confirm-demo.module').then(m => m.ConfirmDemoModule)
   },
   {
     path: 'demos/disclosure',
-    loadChildren: 'src/app/demos/disclosure/disclosure-demo.module#DisclosureDemoModule'
+    loadChildren: () => import('src/app/demos/disclosure/disclosure-demo.module').then(m => m.DisclosureDemoModule)
   },
   {
     path: 'demos/dropdown-menu',
-    loadChildren: 'src/app/demos/dropdown-menu/dropdown-menu-demo.module#DropdownMenuDemoModule'
+    loadChildren: () => import('src/app/demos/dropdown-menu/dropdown-menu-demo.module').then(m => m.DropdownMenuDemoModule)
   },
   {
     path: 'demos/grid',
-    loadChildren: 'src/app/demos/grid/grid-demo.module#GridDemoModule'
+    loadChildren: () => import('src/app/demos/grid/grid-demo.module').then(m => m.GridDemoModule)
   },
   {
     path: 'demos/image-uploader',
-    loadChildren: 'src/app/demos/image-uploader/image-uploader-demo.module#ImageUploaderDemoModule'
+    loadChildren: () => import('src/app/demos/image-uploader/image-uploader-demo.module').then(m => m.ImageUploaderDemoModule)
   },
   {
     path: 'demos/media-query',
-    loadChildren: 'src/app/demos/media-query/media-query-demo.module#MediaQueryDemoModule'
+    loadChildren: () => import('src/app/demos/media-query/media-query-demo.module').then(m => m.MediaQueryDemoModule)
   },
   {
     path: 'demos/media',
-    loadChildren: 'src/app/demos/media/media-demo.module#MediaDemoModule'
+    loadChildren: () => import('src/app/demos/media/media-demo.module').then(m => m.MediaDemoModule)
   },
   {
     path: 'demos/overlay',
-    loadChildren: 'src/app/demos/overlay/overlay-demo.module#OverlayDemoModule'
+    loadChildren: () => import('src/app/demos/overlay/overlay-demo.module').then(m => m.OverlayDemoModule)
   },
   {
     path: 'demos/popover',
-    loadChildren: 'src/app/demos/popover/popover-demo.module#PopoverDemoModule'
+    loadChildren: () => import('src/app/demos/popover/popover-demo.module').then(m => m.PopoverDemoModule)
   },
   {
     path: 'demos/notice',
-    loadChildren: 'src/app/demos/notice/notice-demo.module#NoticeDemoModule'
+    loadChildren: () => import('src/app/demos/notice/notice-demo.module').then(m => m.NoticeDemoModule)
   },
   {
     path: 'demos/thumbnail',
-    loadChildren: 'src/app/demos/thumbnail/thumbnail-demo.module#ThumbnailDemoModule'
+    loadChildren: () => import('src/app/demos/thumbnail/thumbnail-demo.module').then(m => m.ThumbnailDemoModule)
   },
   {
     path: 'demos/typeahead',
-    loadChildren: 'src/app/demos/typeahead/typeahead-demo.module#TypeaheadDemoModule'
+    loadChildren: () => import('src/app/demos/typeahead/typeahead-demo.module').then(m => m.TypeaheadDemoModule)
   },
   {
     path: 'demos/wait',
-    loadChildren: 'src/app/demos/wait/wait-demo.module#WaitDemoModule'
+    loadChildren: () => import('src/app/demos/wait/wait-demo.module').then(m => m.WaitDemoModule)
   },
   {
     path: 'demos/tabs',
-    loadChildren: 'src/app/demos/tabs/tabs-demo.module#TabsDemoModule'
+    loadChildren: () => import('src/app/demos/tabs/tabs-demo.module').then(m => m.TabsDemoModule)
   }
 ];
 

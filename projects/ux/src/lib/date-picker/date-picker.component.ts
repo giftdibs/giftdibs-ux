@@ -56,13 +56,13 @@ export class DatePickerComponent implements OnInit, ControlValueAccessor {
 
   public days: number[] = [];
 
-  @ViewChild('yearSelect')
+  @ViewChild('yearSelect', { static: true })
   private yearSelect: ElementRef<any>;
 
-  @ViewChild('monthSelect')
+  @ViewChild('monthSelect', { static: true })
   private monthSelect: ElementRef<any>;
 
-  @ViewChild('daySelect')
+  @ViewChild('daySelect', { static: true })
   private daySelect: ElementRef<any>;
 
   private _value: Date;
