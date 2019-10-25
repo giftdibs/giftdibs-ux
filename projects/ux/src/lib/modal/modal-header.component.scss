@@ -4,10 +4,15 @@
   padding: 20px $gd-spacing;
   border-bottom: 1px solid $gd-color-neutral-lightest;
   text-align: center;
+  position: relative;
+}
+
+.gd-modal-header-body {
+  padding: 0 30px;
 }
 
 .gd-modal-header-button-close {
-  margin-top: -$gd-spacing-lg;
-  margin-bottom: -$gd-spacing-lg;
-  margin-right: -$gd-spacing-lg;
+  position: absolute;
+  right: $gd-spacing-lg;
+  top: $gd-spacing-lg;
 }

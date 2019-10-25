@@ -1,7 +1,7 @@
 <div class="gd-card">
   <ng-container *ngIf="route">
     <a
-      class="gd-card-anchor gd-animation-tap"
+      class="gd-card-anchor"
       tabindex="0"
       [routerLink]="route.commands"
       [fragment]="route.extras?.fragment"
@@ -12,7 +12,7 @@
 
   <ng-container *ngIf="!route && hasActionClick">
     <div
-      class="gd-card-button gd-animation-tap"
+      class="gd-card-button"
       role="button"
       tabindex="0"
       (click)="onClick()"

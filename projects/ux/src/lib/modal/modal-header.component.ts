@@ -1,7 +1,10 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  Input
+  EventEmitter,
+  Input,
+  OnDestroy,
+  Output
 } from '@angular/core';
 
 @Component({
@@ -10,7 +13,18 @@ import {
   styleUrls: ['./modal-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ModalHeaderComponent {
+export class ModalHeaderComponent implements OnDestroy {
   @Input()
   public showCloseButton = false;
+
+  @Output()
+  public closeButtonClick = new EventEmitter<void>();
+
+  public ngOnDestroy(): void {
+    this.closeButtonClick.complete();
+  }
+
+  public onCloseClick(): void {
+    this.closeButtonClick.emit();
+  }
 }

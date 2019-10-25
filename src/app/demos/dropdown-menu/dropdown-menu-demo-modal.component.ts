@@ -43,4 +43,8 @@ export class DropdownMenuDemoModalComponent {
       }
     });
   }
+
+  public onModalHeaderCloseButtonClick(): void {
+    this.modal.close();
+  }
 }

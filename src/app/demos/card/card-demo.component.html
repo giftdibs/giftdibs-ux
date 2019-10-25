@@ -4,7 +4,9 @@
 
 <gd-row>
   <gd-column screenSmall="4">
-    <gd-card>
+    <gd-card
+      (actionClick)="onActionClick()"
+    >
       <gd-card-thumbnail>
         <gd-thumbnail
           type="fill"
@@ -45,7 +47,7 @@
         }"
       >
         <gd-ribbon *ngIf="item.isDibbed"
-          ribbonType="secondary"
+          ribbonType="success"
         >
           <gd-icon icon="check"></gd-icon>
         </gd-ribbon>

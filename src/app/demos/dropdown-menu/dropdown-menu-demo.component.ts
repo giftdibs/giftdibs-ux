@@ -47,7 +47,10 @@ export class DropdownMenuDemoComponent implements OnInit {
   }
 
   public openModal(): void {
-    const modal = this.modalService.open(DropdownMenuDemoModalComponent, {});
+    const modal = this.modalService.open(DropdownMenuDemoModalComponent, {
+      clickOverlayToClose: true
+    });
+
     modal.closed.subscribe((args: ModalClosedEventArgs) => {
       console.log('modal closed:', args);
     });

@@ -1,3 +1,7 @@
+# 1.0.0-rc.3 (2019-10-25)
+
+- Added close button to modal headers.
+
 # 1.0.0-rc.2 (2019-08-29)
 
 - Upgraded to Angular 8.

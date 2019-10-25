@@ -10,9 +10,6 @@
 
 .gd-card-anchor {
   display: block;
-  border-radius: $gd-border-radius;
-  padding: 8px;
-  margin: -8px;
   color: $gd-text-color-default;
 
   &:hover {
@@ -20,6 +17,14 @@
   }
 }
 
+.gd-card-anchor,
 .gd-card-button {
+  border-radius: $gd-border-radius;
   cursor: pointer;
+
+  &:hover {
+    .gd-card-wrapper {
+      box-shadow: 0 0 0 5px rgba(0,0,0,0.06), 0 1px 1px rgba(0,0,0,0.25);
+    }
+  }
 }

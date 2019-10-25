@@ -48,9 +48,13 @@ export class CardDemoComponent implements OnInit {
       price: 12
     }
   ];
+
   constructor() { }
 
   public ngOnInit(): void {
+  }
+
+  public onActionClick(): void {
   }
 
 }

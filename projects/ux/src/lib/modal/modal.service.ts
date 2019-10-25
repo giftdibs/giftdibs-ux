@@ -33,7 +33,7 @@ export class ModalService {
     const overlayInstance = this.overlayService.attach(
       ModalWrapperComponent,
       {
-        destroyOnOverlayClick: false,
+        destroyOnOverlayClick: !!settings.clickOverlayToClose,
         preventBodyScroll: true,
         showBackdrop: true
       }
