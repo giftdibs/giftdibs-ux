@@ -1,3 +1,7 @@
+# 1.0.0-rc.4 (2019-11-03)
+
+- Removed animation from modal.
+
 # 1.0.0-rc.3 (2019-10-25)
 
 - Added close button to modal headers.
