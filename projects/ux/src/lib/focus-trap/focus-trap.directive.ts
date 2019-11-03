@@ -79,6 +79,10 @@ export class FocusTrapDirective implements AfterContentInit, OnDestroy {
 
   @HostListener('keydown', ['$event'])
   public onKeyDown(event: KeyboardEvent): void {
+    if (!event.key) {
+      return;
+    }
+
     const key = event.key.toLowerCase();
 
     if (key === 'tab') {

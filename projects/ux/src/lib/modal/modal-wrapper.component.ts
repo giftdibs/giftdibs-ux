@@ -13,16 +13,8 @@ import {
 } from '@angular/core';
 
 import {
-  AnimationEvent
-} from '@angular/animations';
-
-import {
   Observable
 } from 'rxjs';
-
-import {
-  gdAnimationEmerge
-} from '../animation/emerge';
 
 import { ModalConfig } from './modal-config';
 import { ModalSize } from './modal-size';
@@ -31,18 +23,11 @@ import { ModalSize } from './modal-size';
   selector: 'gd-modal-wrapper',
   templateUrl: './modal-wrapper.component.html',
   styleUrls: ['./modal-wrapper.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [
-    gdAnimationEmerge
-  ]
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ModalWrapperComponent implements OnDestroy {
   public get closed(): Observable<void> {
     return this._closed;
-  }
-
-  public get animationState(): string {
-    return (this.isOpen) ? 'open' : 'closed';
   }
 
   public get size(): ModalSize {
@@ -55,8 +40,6 @@ export class ModalWrapperComponent implements OnDestroy {
 
   @ViewChild('target', { read: ViewContainerRef, static: true })
   private targetRef: ViewContainerRef;
-
-  private isOpen = false;
 
   private _closed = new EventEmitter<void>();
   private _size: ModalSize;
@@ -71,13 +54,6 @@ export class ModalWrapperComponent implements OnDestroy {
     this._closed.complete();
   }
 
-  public onAnimationDone(event: AnimationEvent): void {
-    if (event.toState === 'closed') {
-      this._closed.emit();
-      this._closed.complete();
-    }
-  }
-
   public attach<T>(component: Type<T>, config: ModalConfig): ComponentRef<T> {
     const injector = Injector.create({
       providers: config.providers,
@@ -87,7 +63,6 @@ export class ModalWrapperComponent implements OnDestroy {
     const factory = this.resolver.resolveComponentFactory(component);
     const componentRef = this.targetRef.createComponent(factory, undefined, injector);
 
-    this.isOpen = true;
     this.size = config.size;
     this.changeDetector.markForCheck();
 
@@ -95,7 +70,8 @@ export class ModalWrapperComponent implements OnDestroy {
   }
 
   public close(): void {
-    this.isOpen = false;
+    this._closed.emit();
+    this._closed.complete();
     this.changeDetector.markForCheck();
   }
 }
