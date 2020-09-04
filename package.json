@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4242",
+    "start": "ng serve --port 4242 --prod",
     "build": "ng build ux --prod && node ./scripts/bundle-css.js",
     "test": "ng test",
     "lint": "ng lint",
