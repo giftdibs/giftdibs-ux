@@ -9,7 +9,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4242",
-    "build": "ng build ux && node ./scripts/bundle-css.js",
+    "build": "ng build ux --prod && node ./scripts/bundle-css.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
