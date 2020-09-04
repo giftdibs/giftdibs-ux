@@ -18,9 +18,6 @@ import { DropdownMenuDemoComponent } from './dropdown-menu-demo.component';
   declarations: [
     DropdownMenuDemoComponent,
     DropdownMenuDemoModalComponent
-  ],
-  entryComponents: [
-    DropdownMenuDemoModalComponent
   ]
 })
 export class DropdownMenuDemoModule { }

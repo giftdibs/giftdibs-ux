@@ -38,9 +38,6 @@ import { DropdownMenuService } from './dropdown-menu.service';
   ],
   providers: [
     DropdownMenuService
-  ],
-  entryComponents: [
-    DropdownMenuComponent
   ]
 })
 export class DropdownMenuModule { }

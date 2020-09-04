@@ -26,9 +26,6 @@ import { ConfirmService } from './confirm.service';
   declarations: [
     ConfirmComponent
   ],
-  entryComponents: [
-    ConfirmComponent
-  ],
   providers: [
     ConfirmService
   ]

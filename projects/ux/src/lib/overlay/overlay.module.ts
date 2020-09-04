@@ -28,10 +28,6 @@ import { OverlayService } from './overlay.service';
     OverlayComponent,
     OverlayHostComponent
   ],
-  entryComponents: [
-    OverlayComponent,
-    OverlayHostComponent
-  ],
   providers: [
     OverlayDomAdapterService,
     OverlayService,
