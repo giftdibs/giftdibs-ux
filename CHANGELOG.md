@@ -1,3 +1,7 @@
+# 2.0.0-rc.0 (2020-09-08)
+
+- Added support for Angular 10. [#8](https://github.com/giftdibs/giftdibs-ux/pull/8)
+
 # 1.0.0-rc.4 (2019-11-03)
 
 - Removed animation from modal.
