@@ -17,9 +17,6 @@ import { OverlayDemoComponent } from './overlay-demo.component';
   declarations: [
     OverlayDemoComponent,
     OverlayDemoSubjectComponent
-  ],
-  entryComponents: [
-    OverlayDemoSubjectComponent
   ]
 })
 export class OverlayDemoModule { }

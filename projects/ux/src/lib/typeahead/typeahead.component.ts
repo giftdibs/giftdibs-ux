@@ -106,7 +106,7 @@ export class TypeaheadComponent
   public isLoading = false;
   public disabled = false;
 
-  @ViewChild('searchInput', { static: false })
+  @ViewChild('searchInput')
   private searchInput: ElementRef;
 
   private _value: string;

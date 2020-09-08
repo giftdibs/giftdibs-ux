@@ -10,13 +10,14 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss"
+          "style": "scss"
         }
       },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/giftdibs-ux",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -53,6 +54,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -145,6 +150,11 @@
           "options": {
             "tsConfig": "projects/ux/tsconfig.lib.json",
             "project": "projects/ux/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ux/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {

@@ -29,9 +29,6 @@ import {
   ],
   exports: [
     PopoverDirective
-  ],
-  entryComponents: [
-    PopoverComponent
   ]
 })
 export class PopoverModule { }

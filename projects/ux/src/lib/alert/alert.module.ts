@@ -33,9 +33,6 @@ import {
   ],
   providers: [
     AlertService
-  ],
-  entryComponents: [
-    AlertComponent
   ]
 })
 export class AlertModule { }

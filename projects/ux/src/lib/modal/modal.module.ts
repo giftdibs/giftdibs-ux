@@ -45,9 +45,6 @@ import { ModalService } from './modal.service';
   ],
   providers: [
     ModalService
-  ],
-  entryComponents: [
-    ModalWrapperComponent
   ]
 })
 export class ModalModule { }

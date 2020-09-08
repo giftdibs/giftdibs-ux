@@ -32,9 +32,6 @@ import { TypeaheadComponent } from './typeahead.component';
   declarations: [
     TypeaheadComponent,
     TypeaheadResultsComponent
-  ],
-  entryComponents: [
-    TypeaheadResultsComponent
   ]
 })
 export class TypeaheadModule { }
