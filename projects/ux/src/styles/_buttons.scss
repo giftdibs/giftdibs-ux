@@ -30,6 +30,7 @@
 
 .gd-button {
   @include gd_form_control();
+  box-shadow: $gd-box-shadow;
   display: inline-block;
   text-align: center;
   white-space: nowrap;
@@ -123,6 +124,7 @@
   background-color: transparent;
   color: $gd-text-color-deemphasized;
   border-radius: 100px;
+  box-shadow: none;
 
   &:hover,
   &:focus {
