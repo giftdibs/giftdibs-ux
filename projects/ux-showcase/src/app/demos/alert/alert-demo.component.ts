@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { AlertService } from 'projects/ux/src/public-api';
-import { AlertType } from 'projects/ux/src/public-api';
 
 @Component({
   selector: 'app-alert-demo',
   templateUrl: './alert-demo.component.html',
   styleUrls: ['./alert-demo.component.scss'],
 })
-export class AlertDemoComponent implements OnInit {
+export class AlertDemoComponent {
   private message = [
     'Lorem ipsum dolor sit amet,',
     'consectetur adipiscing elit.',
@@ -21,8 +20,6 @@ export class AlertDemoComponent implements OnInit {
   ].join(' ');
 
   constructor(private alertService: AlertService) {}
-
-  public ngOnInit(): void {}
 
   public openAlert(type: string): void {
     switch (type) {

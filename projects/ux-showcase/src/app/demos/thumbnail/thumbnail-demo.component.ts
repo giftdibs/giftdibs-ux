@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-thumbnail-demo',
   templateUrl: './thumbnail-demo.component.html',
   styleUrls: ['./thumbnail-demo.component.scss'],
 })
-export class ThumbnailDemoComponent implements OnInit {
+export class ThumbnailDemoComponent {
   constructor() {}
-
-  public ngOnInit(): void {}
 }

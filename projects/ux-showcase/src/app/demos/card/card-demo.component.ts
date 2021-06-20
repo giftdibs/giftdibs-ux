@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-card-demo',
   templateUrl: './card-demo.component.html',
   styleUrls: ['./card-demo.component.scss'],
 })
-export class CardDemoComponent implements OnInit {
+export class CardDemoComponent {
   public items: any[] = [
     {
       imageUrl: '/assets/donut.jpg',
@@ -52,8 +52,6 @@ export class CardDemoComponent implements OnInit {
   ];
 
   constructor() {}
-
-  public ngOnInit(): void {}
 
   public onActionClick(): void {}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { PopoverMessage, PopoverMessageType } from 'projects/ux/src/public-api';
 import { Subject } from 'rxjs';
@@ -8,13 +8,11 @@ import { Subject } from 'rxjs';
   templateUrl: './popover-demo.component.html',
   styleUrls: ['./popover-demo.component.scss'],
 })
-export class PopoverDemoComponent implements OnInit {
+export class PopoverDemoComponent {
   public extraContentVisible = false;
   public messageStream = new Subject<PopoverMessage>();
 
   constructor() {}
-
-  public ngOnInit(): void {}
 
   public positionPopover(): void {
     this.messageStream.next({

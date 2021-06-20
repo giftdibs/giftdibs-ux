@@ -35,7 +35,10 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["projects/ux/**/*.ts", "projects/ux/**/*.html"]
+            "lintFilePatterns": [
+              "projects/ux/**/*.ts",
+              "projects/ux/**/*.html"
+            ]
           }
         }
       }
@@ -67,7 +70,9 @@
               "projects/ux-showcase/src/favicon.ico",
               "projects/ux-showcase/src/assets"
             ],
-            "styles": ["projects/ux-showcase/src/styles.scss"],
+            "styles": [
+              "projects/ux-showcase/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -133,7 +138,9 @@
               "projects/ux-showcase/src/favicon.ico",
               "projects/ux-showcase/src/assets"
             ],
-            "styles": ["projects/ux-showcase/src/styles.scss"],
+            "styles": [
+              "projects/ux-showcase/src/styles.scss"
+            ],
             "scripts": []
           }
         },

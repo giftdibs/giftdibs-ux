@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import {
   OverlayConfig,
@@ -13,10 +13,8 @@ import { OverlayDemoSubjectComponent } from './overlay-demo-subject.component';
   templateUrl: './overlay-demo.component.html',
   styleUrls: ['./overlay-demo.component.scss'],
 })
-export class OverlayDemoComponent implements OnInit {
+export class OverlayDemoComponent {
   constructor(private overlayService: OverlayService) {}
-
-  public ngOnInit(): void {}
 
   public openOverlayWithBackdrop(): void {
     const config: OverlayConfig = {

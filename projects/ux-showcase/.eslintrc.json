@@ -1,5 +1,5 @@
 {
-  "extends": ["plugin:@angular-eslint/recommended", "prettier"],
+  "extends": ["../../.eslintrc.json", "prettier"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {

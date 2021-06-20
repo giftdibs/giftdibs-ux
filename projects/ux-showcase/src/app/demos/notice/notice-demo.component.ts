@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-notice-demo',
   templateUrl: './notice-demo.component.html',
   styleUrls: ['./notice-demo.component.scss'],
 })
-export class NoticeDemoComponent implements OnInit {
+export class NoticeDemoComponent {
   constructor() {}
-
-  public ngOnInit(): void {}
 }

@@ -181,10 +181,10 @@ export class TypeaheadComponent
   }
 
   // Angular automatically constructs these methods.
-  public onChange = (value: any) => {};
+  public onChange = (_: any) => {};
   public onTouched = () => {};
 
-  public registerOnChange(fn: (value: any) => void): void {
+  public registerOnChange(fn: (_: any) => void): void {
     this.onChange = fn;
   }
 

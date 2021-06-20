@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { ConfirmAnswer, ConfirmService } from 'projects/ux/src/public-api';
 
@@ -7,10 +7,8 @@ import { ConfirmAnswer, ConfirmService } from 'projects/ux/src/public-api';
   templateUrl: './confirm-demo.component.html',
   styleUrls: ['./confirm-demo.component.scss'],
 })
-export class ConfirmDemoComponent implements OnInit {
+export class ConfirmDemoComponent {
   constructor(private confirmService: ConfirmService) {}
-
-  public ngOnInit(): void {}
 
   public openConfirm(): void {
     this.confirmService.confirm(
