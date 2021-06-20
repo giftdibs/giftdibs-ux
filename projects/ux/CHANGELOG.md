@@ -1,3 +1,7 @@
+# 2.0.0-rc.1 (2021-06-20)
+
+- Added support for Angular 12.
+
 # 2.0.0-rc.0 (2020-09-08)
 
 - Added support for Angular 10. [#8](https://github.com/giftdibs/giftdibs-ux/pull/8)
