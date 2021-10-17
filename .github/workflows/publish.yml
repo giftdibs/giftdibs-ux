@@ -19,7 +19,7 @@ jobs:
           npm install
       - name: Publish
         run: |
-          npm run build ux
+          npm run build
           cd dist/ux
           npm publish --access public
         env:
