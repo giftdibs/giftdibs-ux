@@ -17,16 +17,16 @@ export class ColumnComponent implements OnInit {
   public screenXXSmall: number = 12;
 
   @Input()
-  public screenXSmall: number = 12;
+  public screenXSmall: number | undefined;
 
   @Input()
-  public screenSmall: number = 12;
+  public screenSmall: number | undefined;
 
   @Input()
-  public screenMedium: number = 12;
+  public screenMedium: number | undefined;
 
   @Input()
-  public screenLarge: number = 12;
+  public screenLarge: number | undefined;
 
   @HostBinding('class')
   public classNames: string = '';

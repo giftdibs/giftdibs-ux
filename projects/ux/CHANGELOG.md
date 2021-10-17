@@ -1,3 +1,7 @@
+# 2.0.1 (2021-10-17)
+
+- Fix the grid component column widths.
+
 # 2.0.0 (2021-10-17)
 
 - Initial `2.0.0` release.
