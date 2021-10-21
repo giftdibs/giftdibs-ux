@@ -21,11 +21,12 @@ export class AlertDemoComponent {
 
   constructor(private alertService: AlertService) {}
 
-  public openAlert(type: string): void {
+  public openAlert(type?: string): void {
     switch (type) {
       case 'success':
         this.alertService.success(this.message, true);
         break;
+      default:
       case 'info':
         this.alertService.info(this.message, true);
         break;

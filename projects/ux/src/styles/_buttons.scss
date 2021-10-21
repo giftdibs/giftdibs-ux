@@ -30,14 +30,13 @@
 
 .gd-button {
   @include gd_form_control();
-  box-shadow: $gd-box-shadow;
   display: inline-block;
   text-align: center;
   white-space: nowrap;
   color: $gd-text-color-default;
   user-select: none;
   cursor: pointer;
-  font-weight: $gd-font-weight-bold;
+  font-weight: 600;
 
   &:disabled {
     @include gd_disabled();

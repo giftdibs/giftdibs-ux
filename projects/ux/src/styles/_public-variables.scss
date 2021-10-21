@@ -11,8 +11,8 @@ $gd-screen-sm-max: $gd-screen-md-min - 1 !default;
 $gd-screen-md-max: $gd-screen-lg-min - 1 !default;
 
 // TEXT
-$gd-font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif !default;
-$gd-font-family-serif: 'Roboto Slab', 'Georgia', 'serif' !default;
+$gd-font-family: system-ui !default;
+$gd-font-family-serif: system-ui !default;
 $gd-font-weight-light: 100 !default;
 $gd-font-weight-normal: 400 !default;
 $gd-font-weight-bold: 700 !default;
@@ -31,7 +31,7 @@ $gd-line-height-reduced: 1.2 !default;
 }
 
 // PRIMARY
-$gd-color-primary: #272a45 !default;
+$gd-color-primary: darkslateblue !default;
 $gd-background-color-primary: desaturate(
   lighten($gd-color-primary, 45%),
   15%
@@ -40,7 +40,7 @@ $gd-border-color-primary: border_color($gd-color-primary) !default;
 $gd-text-color-primary: text_color($gd-color-primary) !default;
 
 // SECONDARY
-$gd-color-secondary: #a9139d !default;
+$gd-color-secondary: darkmagenta !default;
 $gd-background-color-secondary: desaturate(
   lighten($gd-color-secondary, 45%),
   15%
@@ -58,7 +58,7 @@ $gd-border-color-info: border_color($gd-color-info) !default;
 $gd-text-color-info: text_color($gd-color-info) !default;
 
 // SUCCESS
-$gd-color-success: #78905e !default;
+$gd-color-success: forestgreen !default;
 $gd-background-color-success: desaturate(
   lighten($gd-color-success, 55%),
   65%

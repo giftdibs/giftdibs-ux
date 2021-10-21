@@ -1,3 +1,7 @@
+# 2.0.2 (2021-10-21)
+
+- Slight CSS adjustments to buttons.
+
 # 2.0.1 (2021-10-17)
 
 - Fix the grid component column widths.
