@@ -4,4 +4,10 @@
   margin-bottom: $gd-spacing-lg;
   display: flex;
   height: 100%;
+
+  ::ng-deep {
+    .gd-thumbnail {
+      border-radius: $gd-border-radius-sm;
+    }
+  }
 }
