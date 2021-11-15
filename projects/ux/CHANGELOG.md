@@ -1,3 +1,7 @@
+# 13.0.1 (2021-11-15)
+
+- Reverted modal style adjustments.
+
 # 13.0.0 (2021-11-15)
 
 - Added support for Angular 13.
