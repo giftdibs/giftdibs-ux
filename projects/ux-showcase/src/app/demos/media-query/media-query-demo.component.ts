@@ -15,7 +15,7 @@ import { takeUntil } from 'rxjs/operators';
 export class MediaQueryDemoComponent implements OnInit, OnDestroy {
   public breakpoint: MediaQueryBreakpoint = MediaQueryBreakpoint.Medium;
 
-  private ngUnsubscribe = new Subject();
+  private ngUnsubscribe = new Subject<void>();
 
   constructor(
     private changeDetector: ChangeDetectorRef,

@@ -62,13 +62,11 @@ export class DropdownMenuComponent
 
   private buttons: any[] = [];
 
-  private ngUnsubscribe = new Subject();
+  private ngUnsubscribe = new Subject<void>();
 
   private _activeIndex = -1;
 
   private _closed = new Subject<void>();
-
-  private _itemTemplate: TemplateRef<any> | undefined;
 
   @ViewChild('menuElementRef', { static: true })
   private menuElementRef: ElementRef | undefined;

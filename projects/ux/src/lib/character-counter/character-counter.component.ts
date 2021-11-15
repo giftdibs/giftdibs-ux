@@ -26,7 +26,7 @@ export class CharacterCounterComponent implements OnInit, OnDestroy {
   public isVisible = false;
   public remaining = 0;
 
-  private ngUnsubscribe = new Subject();
+  private ngUnsubscribe = new Subject<void>();
 
   constructor(private changeDetector: ChangeDetectorRef) {}
 

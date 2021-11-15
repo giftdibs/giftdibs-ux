@@ -38,7 +38,7 @@ export class PopoverDirective implements OnInit, OnDestroy {
   @Input()
   public gdPopoverMessageStream = new Subject<PopoverMessage>();
 
-  private ngUnsubscribe = new Subject();
+  private ngUnsubscribe = new Subject<void>();
 
   private overlayInstance: OverlayInstance<PopoverComponent> | undefined;
 
