@@ -42,7 +42,7 @@ export class PopoverComponent implements OnDestroy {
 
   private focusableElements: any[] = [];
 
-  private ngUnsubscribe = new Subject();
+  private ngUnsubscribe = new Subject<void>();
 
   private _closed = new EventEmitter<void>();
 

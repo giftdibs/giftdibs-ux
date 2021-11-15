@@ -1,3 +1,7 @@
+# 13.0.0 (2021-11-15)
+
+- Added support for Angular 13.
+
 # 2.0.2 (2021-10-21)
 
 - Slight CSS adjustments to buttons.

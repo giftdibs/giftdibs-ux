@@ -102,7 +102,7 @@ export class TypeaheadComponent
 
   private hasResults = false;
 
-  private ngUnsubscribe = new Subject();
+  private ngUnsubscribe = new Subject<void>();
 
   private overlayInstance:
     | OverlayInstance<TypeaheadResultsComponent>
