@@ -21,7 +21,18 @@ export class DropdownMenuDemoComponent implements OnInit {
   public ngOnInit(): void {
     this.menuItems = [
       {
-        label: 'First item',
+        label: 'Edit',
+        icon: 'users',
+        action: () => {
+          console.log('First item clicked!');
+        },
+        addSeparatorAfter: false,
+        data: {
+          foo: 'bar',
+        },
+      },
+      {
+        label: 'Move...',
         icon: 'users',
         action: () => {
           console.log('First item clicked!');
@@ -32,7 +43,7 @@ export class DropdownMenuDemoComponent implements OnInit {
         },
       },
       {
-        label: 'Second item',
+        label: 'Delete...',
         icon: 'trash',
         action: () => {
           console.log('Second item clicked!');

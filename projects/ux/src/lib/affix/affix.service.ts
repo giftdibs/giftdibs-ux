@@ -79,11 +79,12 @@ export class AffixService {
       document.documentElement.clientHeight,
       window.innerHeight || 0,
     );
+
     if (subjectRect.height + top >= viewportHeight) {
       this.renderer.setStyle(
         subject.nativeElement,
         'height',
-        `${viewportHeight - top}px`,
+        `${subjectRect.height}px`,
       );
     }
 

@@ -1,3 +1,7 @@
+# 13.0.2 (2021-11-18)
+
+- Fixed the dropdown menu to set its height correctly in Safari.
+
 # 13.0.1 (2021-11-15)
 
 - Reverted modal style adjustments.
