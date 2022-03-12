@@ -37,6 +37,8 @@
   user-select: none;
   cursor: pointer;
   font-weight: 600;
+  box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.25),
+    inset 0px -1px 1px 0px rgba(0, 0, 0, 0.125);
 
   &:disabled {
     @include gd_disabled();
